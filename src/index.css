@@ -1,0 +1,618 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('./fonts/PPNeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('./fonts/PPNeueMontreal-Thin.otf') format('opentype');
+  font-weight: 200; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('./fonts/PPNeueMontreal-Book.otf') format('opentype');
+  font-weight: normal; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('./fonts/PPNeueMontreal-Bold.otf') format('opentype');
+  font-weight: 800; 
+  font-style: normal;
+}
+
+@layer components {
+  body {
+    --nav-height: 50px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+
+  #coursework-chooser::before {
+    content: "";
+    width: 3px;
+    height: 5rem;
+    background-color: rgba(114, 86, 255, 1);
+    z-index: 1;
+    top: calc(5rem * var(--coursework-chooser-index));
+    left: -2;
+    position: absolute;
+    border-radius: 0.5rem;
+    transition: top 0.5s ease;
+  }
+
+  .project-card::before {
+    content: "";
+    background: radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(114, 86, 255, 0.1),
+      transparent 40%
+    );
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #name path:nth-child(1) {
+    stroke-dasharray: 357px;
+    stroke-dashoffset: 357px;
+    animation: name-animation 0.5s ease forwards 0.4s;
+  }
+
+  #name path:nth-child(2) {
+    stroke-dasharray: 455px;
+    stroke-dashoffset: 455px;
+    animation: name-animation 0.5s ease forwards 0.5s;
+  }
+
+  #name path:nth-child(3) {
+    stroke-dasharray: 443px;
+    stroke-dashoffset: 443px;
+    animation: name-animation 0.5s ease forwards 0.6s;
+  }
+
+  #name path:nth-child(4) {
+    stroke-dasharray: 399px;
+    stroke-dashoffset: 399px;
+    animation: name-animation 0.5s ease forwards 0.7s;
+  }
+
+  #name path:nth-child(5) {
+    stroke-dasharray: 425px;
+    stroke-dashoffset: 425px;
+    animation: name-animation 0.5s ease forwards 0.8s;
+  }
+
+  #name path:nth-child(6) {
+    stroke-dasharray: 621px;
+    stroke-dashoffset: 621px;
+    animation: name-animation 0.5s ease forwards 0.9s;
+  }
+
+  #name path:nth-child(7) {
+    stroke-dasharray: 445px;
+    stroke-dashoffset: 445px;
+    animation: name-animation 0.5s ease forwards 1s;
+  }
+
+  #name path:nth-child(8) {
+    stroke-dasharray: 425px;
+    stroke-dashoffset: 425px;
+    animation: name-animation 0.5s ease forwards 1.1s;
+  }
+
+  #name {
+    animation: fill 1s ease forwards 1.3s, scale-away 0.1s linear forwards 2.7s;
+  }
+
+  :root {
+  /* when the name reveal is fully done */
+  --intro-name-finish: 2.6s;
+
+  /* when overlays (mask, dots, slash, overlay) actually fade out */
+  --intro-overlay-fade: 3.0s;
+}
+
+/* Your existing keyframes remain the same. We’re just changing schedules. */
+.typeAnimation {
+  /* make sure these always honor inline --duration / --delay with sensible fallbacks */
+  animation: disappear var(--duration, 0.45s) ease-out forwards var(--delay, 0.25s);
+}
+
+/* The full-page overlay that sits above everything */
+.intro-overlay {
+  animation: fade-away 0.9s linear forwards var(--intro-overlay-fade, 3s);
+}
+
+/* The white page mask: fade AFTER the name fully reveals */
+.intro-mask {
+  animation: introFade 0.25s linear forwards var(--intro-overlay-fade, 3s);
+}
+
+/* Splash “text” sequence (centered word) — completes before overlays fade */
+.intro-textAnimation {
+  /* slide in, then slide out; both wrap up by --intro-name-finish */
+  animation:
+    textAnimationSlideLeft 0.5s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 1.1s),
+    textAnimationSlideRight 0.5s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 0.4s),
+    /* then quietly fade the splash text itself (not the mask) */
+    introFade 0.2s linear forwards var(--intro-overlay-fade, 3s);
+}
+
+/* Dots layer — finishes motion before overlays fade */
+.intro-dotAnimation {
+  animation:
+    dotAnimationShrink 0.5s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 1.6s),
+    dotAnimationSlide   0.5s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 1.1s),
+    dotAnimationSlideLeft 0.5s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 0.4s),
+    introFade 0.2s linear forwards var(--intro-overlay-fade, 3s);
+}
+
+/* Slash layer — also finishes before overlays fade */
+.intro-slashAnimation {
+  animation:
+    slashAnimationShrink    0.5s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 1.6s),
+    slashAnimationSlideLeft 0.5s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 0.4s),
+    slashAnimationTransform 0.3s ease-in-out forwards calc(var(--intro-name-finish, 2.6s) - 0.2s),
+    introFade 0.2s linear forwards var(--intro-overlay-fade, 3s);
+}
+
+  @keyframes introFade {
+    to {
+      opacity: 0;
+      filter: blur(5px);
+      visibility: hidden;
+    }
+  }
+
+  @keyframes textAnimationSlideRight {
+    to {
+      width: 4rem;
+      transform: translateX(-2vw);
+    }
+  }
+
+  @keyframes textAnimationSlideLeft {
+    to {
+      width: 390px;
+      transform: translateX(-10.5vw);
+    }
+  }
+
+  @keyframes dotAnimationShrink {
+    from {
+      margin-left: 0;
+      margin-top: 0;
+      width: 100vw;
+      height: 100vw;
+    }
+  
+    to {
+      margin-left: calc(50vw - 5px);
+      margin-top: calc(40vh - 5px);
+      width: 60px;
+      height: 100px;
+    }
+  }
+
+  @keyframes slashAnimationShrink {
+    from {
+      width: 100vw;
+      height: 100vw;
+    }
+  
+    to {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  @keyframes dotAnimationSlide {
+    to {
+      transform: translateX(8vw);
+    }
+  }
+
+  @keyframes dotAnimationSlideLeft {
+    to {
+      transform: translateX(1.5vw) translateY(-9vh);
+    }
+  }
+
+  @keyframes slashAnimationSlideLeft {
+    to {
+      transform: translateY(9vh);
+    }
+  }
+
+  @keyframes slashAnimationTransform {
+    to {
+      transform: translateY(-1vh) translateX(3vw) rotate(20deg);
+      transform-origin: top left;
+      height: 120px;
+    }
+  }
+  
+  @keyframes disappear {
+    to {
+      transform: translate(var(--shift), 0px);
+      visibility: hidden;
+    }
+  }
+
+  @keyframes slide {
+    to {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-away {
+    to {
+      scale: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes fade-away {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes name-animation {
+    to {
+      stroke-dashoffset: 0px;
+    }
+  }
+
+  @keyframes fill {
+    from {
+      fill: url(#paint4_linear_3_2);
+      fill-opacity: 0;
+    }
+    to {
+      fill: url(#paint4_linear_3_2);
+      fill-opactiy: 1;
+    }
+  }
+
+  .lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90vw;
+  }
+
+  .line {
+    position: absolute;
+    width: 1px;
+    top: 0;
+    left: 50%;
+    background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+    overflow: hidden;
+  }
+  .line::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    animation: drop 7s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  }
+  .line:nth-child(1) {
+    margin-left: -47%;
+  }
+
+  .line:nth-child(1)::after {
+    animation-delay: 2s;
+    animation-duration: 8s;
+  }
+
+  .line:nth-child(2) {
+    margin-left: -25%;
+  }
+
+  .line:nth-child(2)::after {
+    animation-delay: 0.6s;
+    animation-duration: 5s;
+  }
+
+  .line:nth-child(4) {
+    margin-left: 25%;
+  }
+
+  .line:nth-child(4)::after {
+    animation-delay: 1.1s;
+    animation-duration: 9s;
+  }
+
+  .line:nth-child(5) {
+    margin-left: 47%;
+  }
+
+  .line:nth-child(5)::after {
+    animation-delay: 1.8s;
+    animation-duration: 10s;
+  }
+
+  @keyframes drop {
+    0% {
+      top: -50%;
+    }
+    100% {
+      top: 110%;
+    }
+  }
+
+  .nav {
+    position: fixed;
+    transition: transform 0.7s;
+  }
+
+  .semester {
+    font-weight: 400;
+    transition: 0.7;
+  }
+
+  .overlay-text {
+    bottom: calc(17vh + 55px);
+    right: 67px;
+  }
+
+  .overlay-bar {
+    border-left-width: 1px;
+    border-color: #6b7280;
+    top: 86%;
+    --tw-text-opacity: 1;
+  }
+
+  .active-sem {
+    --tw-border-opacity: 1;
+    border-left-color: rgb(45 212 191 / var(--tw-border-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(45 212 191 / var(--tw-text-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(63 63 70 / var(--tw-bg-opacity));
+    border-left-width: 3px;
+  }
+
+  .list-element::before {
+    content: "▹";
+    font-size: 10px;
+    color: #617891;
+    vertical-align: middle;
+  }
+
+  .card {
+    --tw-bg-opacity: 1;
+    background-color: rgb(44 44 48 / var(--tw-bg-opacity));
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 0.75rem /* 6px */;
+    height: 18rem /* 288px */;
+    grid-column: span 2 / span 2;
+    padding: 12px;
+  }
+
+  .nav-hide {
+    transform: translateY(-86px);
+  }
+
+  .buttonBackground {
+    background: linear-gradient(to left, green 50%, blue 50%);
+    background-position: 100% 0%;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", system-ui, sans-serif;
+  }
+}
+
+@media (min-width: 1px) {
+  .line {
+    height: 100vh;
+  }
+  .experience-padding {
+    padding-left: 15vw /* 320px */;
+    padding-right: 15vw /* 320px */;
+  }
+  .offsetSubtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: -64px;
+    width: 50px;
+    direction: rtl;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+  .offsetSubtitle::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -18px;
+    right: -150px;
+    width: 50px;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+  .skillSubtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: -100px;
+    width: 100px;
+    direction: rtl;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+
+  .skillSubtitle::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -18px;
+    right: -100px;
+    width: 100px;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+  .courseSubtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: -86px;
+    width: 70px;
+    direction: rtl;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+  .courseSubtitle::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -18px;
+    right: -180px;
+    width: 70px;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+  .experienceSubtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: -76px;
+    width: 60px;
+    direction: rtl;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+  .experienceSubtitle::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -18px;
+    right: -180px;
+    width: 60px;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+}
+
+@media (min-width: 640px) {
+  .offsetSubtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: -114px;
+    width: 100px;
+    direction: rtl;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+
+  .offsetSubtitle::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -18px;
+    right: -150px;
+    width: 100px;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+}
+
+@media (min-width: 768px) {
+  .experienceSubtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: -166px;
+    width: 150px;
+    direction: rtl;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+  .experienceSubtitle::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -18px;
+    right: -180px;
+    width: 150px;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+}
+
+@media (min-width: 1024px) {
+  .offsetSubtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: -60px;
+    width: 6vh;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+
+  .offsetSubtitle::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -18px;
+    right: -150px;
+    width: 15vh;
+    height: 2px;
+    background-color: #3f3f46;
+  }
+}
+
+@media (min-width: 1200px) {
+  .experience-padding {
+    padding-left: 25vw /* 320px */;
+    padding-right: 25vw /* 320px */;
+  }
+}

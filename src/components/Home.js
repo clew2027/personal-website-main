@@ -1,0 +1,156 @@
+/* eslint-disable global-require */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useEffect } from 'react';
+const headshot = new URL('./images/portrait.jpg', import.meta.url).href;
+
+function Home() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('typeAnimation');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    const types = document.querySelectorAll('.typeDisappear');
+    types.forEach((type) => observer.observe(type));
+
+    return () => {
+      types.forEach((type) => observer.unobserve(type));
+    };
+  }, []);
+
+  return (
+    <div className="bg-white-background px-32">
+      {/* top border strip (matches About/Experience) */}
+      <div className="w-full h-5 border-1 border-t-0 border-grid" />
+
+      {/* header row with side blocks + bottom border */}
+      <div className="w-full h-20 flex flex-row">
+        <div className="w-20 h-20 flex-shrink-0 border-1 border-t-0 border-grid" />
+        <div className="relative w-full flex items-center px-10 text-3xl font-medium mx-auto border-b-[1px] border-grid">
+          <div className="absolute -top-3 -left-3 w-3 h-3 border-r-1 border-b-1 border-off-black">
+            <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
+          </div>
+          <div id="home" className="group relative cursor-default w-fit overflow-hidden">
+            Home
+            <div className="group-hover:left-0 bottom-[1px] duration-150 absolute w-full h-[2px] bg-off-black -left-full" />
+          </div>
+        </div>
+        <div className="w-20 h-20 flex-shrink-0 border-1 border-t-0 border-grid" />
+      </div>
+
+      {/* main content row framed with left/right borders + bottom border */}
+      <div className="flex flex-row text-off-black">
+        <div className="w-20 flex-shrink-0 border-1 border-gray-500/40 border-t-0" />
+        <div className="p-10 w-full border-b-1 border-grid">
+          {/* your original hero content */}
+          <div className="flex flex-row justify-between xs:px-0 lg:px-4 xl:px-10 xs:flex-col xs:pb-14 lg:pt-6 lg:flex-row">
+            <div className="mt-8 z-10 xs:w-full lg:w-1/2 xs:justify-center lg:justify-start xs:text-center md:text-left ">
+              <div className="text-off-black/80 relative tracking-wide xs:mx-auto lg:m-0 overflow-hidden text-lg xs:text-center lg:text-left">
+                Hi! My name is
+              </div>
+              <div className="xs::mx-auto xs:w-fit lg:w-full xs:text-8xl lg:text-7xl xl:text-8xl overflow-hidden xs:m-auto xs:text-center md:text-left animate-gradient relative bg-clip-text text-transparent bg-gradient-to-r from-[#25344F] via-[#617891] to-[#25344F] xs:my-6 font-medium tracking-normal">
+                <div
+                  style={{ '--shift': '500px', '--duration': '0.6s', '--delay': '0.9s' }}
+                  className="typeAnimation absolute w-full h-full bg-zinc-900"
+                />
+                Charlotte Lew
+              </div>
+              <div
+                style={{ '--delay': '1.4s', '--slideDuration': '0.2s' }}
+                className="text-off-black/80 slideAnimation xs:text-center lg:text-left translate-y-5 relative w-auto tracking-wide xs:mx-auto md:w-96 lg:m-0 lg:w-96"
+              >
+                I&apos;m a junior @ penn who loves using design and software to build thoughtful and accessible tech!
+              </div>
+              <div className="xs:mt-10 text-white-background flex flex-row w-fit xs:mx-auto lg:mx-0">
+                <div className="hover:scale-110 hover:text-[#8971ff] mx-3 justify-center duration-300 w-6 h-6">
+                  <a href="https://github.com/clew2027" aria-label="GitHub" target="_blank" rel="noreferrer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-github"
+                    >
+                      <title>GitHub</title>
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </a>
+                </div>
+                <div className="mr-3 hover:scale-110 hover:text-[#8971ff] duration-300 w-6 h-6">
+                  <a href="https://www.instagram.com/worm._.s/" aria-label="Instagram" target="_blank" rel="noreferrer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-instagram"
+                    >
+                      <title>Instagram</title>
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </a>
+                </div>
+                <div className="hover:scale-110 hover:text-[#8971ff] duration-300 w-6 h-6">
+                  <a href="https://www.linkedin.com/in/charlotte-lew-86ab591bb/" aria-label="Linkedin" target="_blank" rel="noreferrer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-linkedin"
+                    >
+                      <title>LinkedIn</title>
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect x="2" y="9" width="4" height="12" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-off-black/80 relative text-center w-fit h-fit items-center mx-auto z-10 mt-14">
+              <img
+                alt="profile"
+                className="object-cover mx-auto mlg:w-80"
+                width="400"
+                height="400"
+                src={headshot}
+              />
+              <div className="group-hover:top-[calc(100%-80px+20px)] duration-300 ease-in-out absolute -top-5 -right-5 w-20 h-20 border-r-[1px] border-r-white-background" />
+              <div className="group-hover:right-[calc(100%-80px+20px)] duration-300 ease-in-out absolute -top-5 -right-5 w-20 h-20 border-t-[1px] border-t-white-background" />
+              <div className="group-hover:left-[calc(100%-80px+20px)] duration-300 ease-in-out absolute -bottom-5 -left-5 w-20 h-20 border-b-[1px] border-b-white-background" />
+              <div className="group-hover:bottom-[calc(100%-80px+20px)] duration-300 ease-in-out absolute -bottom-5 -left-5 w-20 h-20 border-l-[1px] border-l-white-background" />
+            </div>
+          </div>
+
+          
+        </div>
+        <div className="w-20 flex-shrink-0 border-1 border-grid border-t-0 relative" />
+      </div>
+    </div>
+  );
+}
+
+export default Home;

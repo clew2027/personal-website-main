@@ -1,0 +1,9 @@
+.parcel-cache
+node_modules
+dist
+.firebase
+.github
+public
+.firebaserc
+firebase.json
+config.js
