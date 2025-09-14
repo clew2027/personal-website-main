@@ -52,7 +52,7 @@ export default function DesignIteration({ iterations = [], final }) {
             <h3 className="text-xl font-semibold text-off-black mb-4">Version 2</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <figure className="border-1 border-grid rounded-lg overflow-hidden">
-                <div className="w-fullbg-[#f7f7f7]">
+                <div className="w-full bg-[#f7f7f7]">
                   <img src={v21} alt="Version 2 – Screen A" className="w-full h-full object-cover" />
                 </div>
               </figure>
