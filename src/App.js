@@ -60,7 +60,6 @@ function AppBody({ sidebar, setSidebar }) {
                 <Home />
                 <About />
                 <Skills />
-                <Experience />
                 <Portfolio />
                 <Contact />
               </>
