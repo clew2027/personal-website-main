@@ -5,7 +5,6 @@ import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
 import Overlay from './components/Overlay';
-import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Portfolio from './components/Portfolio';
 
@@ -38,7 +37,6 @@ function AppBody({ sidebar, setSidebar }) {
                 <Home />
                 <About />
                 <Skills />
-                <Experience />
                 <Portfolio />
                 <Contact />
               </>
