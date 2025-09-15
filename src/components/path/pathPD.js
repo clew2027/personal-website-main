@@ -74,13 +74,6 @@ export default function Problem({ journeySrc, affmapSrc }) {
 
         <ul className="list-decimal list-inside space-y-6 text-off-black/80 max-w-3xl mb-8">
           <li>
-            <strong>Information Overload &amp; Confusion</strong>
-            <p className="ml-4 mt-1">
-              Users get overwhelmed by too much text, too many links, and excessive calendar details.
-              Confusing features like ranking systems, alternative carts, or overlapping schedules make it hard to plan efficiently.
-            </p>
-          </li>
-          <li>
             <strong>Inefficient Actions &amp; Multi-Step Processes</strong>
             <p className="ml-4 mt-1">
               Tasks like dropping a class, excluding times, or submitting permission requests require multiple clicks or steps.
@@ -88,7 +81,14 @@ export default function Problem({ journeySrc, affmapSrc }) {
             </p>
           </li>
           <li>
-            <strong>Poor Visibility &amp; Prioritization of Key Info</strong>
+            <strong>Confusing Information Organization</strong>
+            <p className="ml-4 mt-1">
+              Users get overwhelmed by too much text, too many links, and excessive calendar details.
+              Confusing features like ranking systems, alternative carts, or overlapping schedules make it hard to plan efficiently.
+            </p>
+          </li>
+          <li>
+            <strong>Poor Visibility into System Status and Critical Actions</strong>
             <p className="ml-4 mt-1">
               Important information (credits left, course difficulty, lecture vs recitation, cart status) is either hard to see or easy to overlook.
               Users want essential info prioritized and presented clearly in one view.

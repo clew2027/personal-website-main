@@ -90,7 +90,7 @@ function ImageCard({ label, src, alt }) {
   return (
     <figure className="relative border-1 border-grid overflow-hidden w-full">
       {/* Keeps images neat and consistent; swap to `aspect-video` if you prefer */}
-      <div className="w-full aspect-[16-11]">
+      <div className="w-full aspect-[16-11] bg-white">
         <img
           src={src}
           alt={alt}

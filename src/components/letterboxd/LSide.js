@@ -15,8 +15,6 @@ function LSide() {
         <a href="#research" className="text-off-black/60 hover:text-off-black duration-200">The User Journey</a>
         <a href="#problem" className="text-off-black/60 hover:text-off-black duration-200">Problem Definition</a>
         <a href="#solution" className="text-off-black/60 hover:text-off-black duration-200">Solution</a>
-        <a href="#designiterations" className="text-off-black/60 hover:text-off-black duration-200">Design Iterations</a>
-        <a href="#designdeepdive" className="text-off-black/60 hover:text-off-black duration-200">Design Deep Dive</a>
         <a href="#results" className="text-off-black/60 hover:text-off-black duration-200">Results</a>
         <a href="#whatilearned" className="text-off-black/60 hover:text-off-black duration-200">What I Learned</a>
 

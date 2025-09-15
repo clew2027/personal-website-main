@@ -2,23 +2,25 @@
 import React from "react";
 
 import Solution from "./Solutions.js";
-const p1sandboxbefore = new URL('../images/pathimages/sandbox.png', import.meta.url).href;
-const p1sandboxafter = new URL('../images/pathimages/patptopmid.png', import.meta.url).href;
-const permissionbefore = new URL('../images/pathimages/permissionreqbefore.png', import.meta.url).href;
-const prioritybefore = new URL('../images/pathimages/prioritybefore.png', import.meta.url).href;
-const priorityafter = new URL('../images/pathimages/priorityafter.png', import.meta.url).href;
-const permissionafter = new URL('../images/pathimages/permissionafter.png', import.meta.url).href;
-const timebefore = new URL('../images/pathimages/timebefore.png', import.meta.url).href;
-const timeafter = new URL('../images/pathimages/timeafter.png', import.meta.url).href;
-const reviewbefore = new URL('../images/pathimages/reviewbefore.png', import.meta.url).href;
-const reviewafter = new URL('../images/pathimages/reviewafter.png', import.meta.url).href;
-const editplanbefore = new URL('../images/pathimages/editplanbefore.png', import.meta.url).href;
-const editplanafter = new URL('../images/pathimages/editplanafter.png', import.meta.url).href;
-const auditafter = new URL('../images/pathimages/auditafter.png', import.meta.url).href;
-const termplanbefore = new URL('../images/pathimages/termplanbefore.png', import.meta.url).href;
-const aftersubmit = new URL('../images/pathimages/aftersubmit.png', import.meta.url).href;
-const submitfigma = new URL('../images/pathimages/submitfigma.png', import.meta.url).href;
+const authbefore = new URL('../images/letterimages/auth.png', import.meta.url).href;
+const authafter = new URL('../images/letterimages/authafter.png', import.meta.url).href;
+const explorebefore = new URL('../images/letterimages/explorebefore.png', import.meta.url).href;
+const exploreafter = new URL('../images/letterimages/exploreafter.png', import.meta.url).href;
+const addbefore = new URL('../images/letterimages/addbefore.png', import.meta.url).href;
+const addafter = new URL('../images/letterimages/addafter.png', import.meta.url).href;
+const homebefore = new URL('../images/letterimages/homebefore.png', import.meta.url).href;
+const homeafter = new URL('../images/letterimages/homeafter.png', import.meta.url).href;
+const listsbefore = new URL('../images/letterimages/listsbefore.png', import.meta.url).href;
+const listsafter = new URL('../images/letterimages/listsafter.png', import.meta.url).href;
+const filmbefore = new URL('../images/letterimages/filmbefore.png', import.meta.url).href;
+const filmafter = new URL('../images/letterimages/filmafter.png', import.meta.url).href;
+const friendbefore = new URL('../images/letterimages/friendbefore.png', import.meta.url).href;
+const friendafter = new URL('../images/letterimages/friendafter.png', import.meta.url).href;
+const commentbefore = new URL('../images/letterimages/commentbefore.png', import.meta.url).href;
+const commentafter = new URL('../images/letterimages/commentafter.png', import.meta.url).href;
 
+
+  
 const problems = [
   {
     id: "p1",
@@ -26,39 +28,51 @@ const problems = [
     features: [
       {
         title: "Simplified authentication",
+        beforeSrc: authbefore,
+        afterSrc: authafter,
         description:
-          "Authentication is straightforward with no looping flows or confusing branches. The optional tour is shown after signing in, keeping onboarding contextual."
+          "The original sign-in experience was a maze — you’d hit a ‘tour’ page that sent you through a mock homepage and search flow, only to loop back to a different login/signup screen. The redesign cuts the fluff and keeps things straightforward: you log in, you’re in."
       },
       {
         title: "Unified explore page",
+        beforeSrc: explorebefore,
+        afterSrc: exploreafter,
         description:
-          "Recommended and popular films, lists, and articles are combined into a single continuous explore page. This removes clutter and avoids infinite scrolling."
+          "Explore used to be split into three endless feeds — Lists (that scrolled on forever), Friends, and Journal (also was endless). The redesign pulls these together into one cohesive explore page, optimizing space so everything has its place. Horizontal scroll replaces the bottomless feeds, making browsing feel lighter and more manageable."
       },
       {
-        title: "Streamlined add-to-film flow",
+        title: "Streamlined add review flow",
+        beforeSrc: addbefore,
+        afterSrc: addafter,
         description:
-          "The add and search actions are merged into one clear process. Tagged films lead directly to movies instead of more lists, reducing circular flows."
+          "In the original app, adding a film meant either pressing a plus button at the bottom of the home page or trekking through the film’s info page (which was another endless scroll) before you could actually review. The new design makes it painless: ‘Add Review’ is right where you’d expect it, built into the review sections themselves."
       }
     ]
   },
   {
     id: "p2",
-    title: "Problem 2: Clarifying navigation and labels",
+    title: "Problem 2: Reorganizing information and labels",
     features: [
       {
         title: "Homepage reorganization",
+        beforeSrc: homebefore,
+        afterSrc: homeafter,
         description:
-          "Friends, my lists, and my reviews are surfaced directly on the homepage, cutting down on navigation steps."
+          "Before, if you wanted to see your friends, lists, or reviews, you had to dig into your profile. Now those essentials are front and center on the homepage, cutting out unnecessary clicks and surfacing what people actually care about."
       },
       {
-        title: "Clear watchlist distinction",
+        title: "Clearing up watchlist vs. list vs. diary vs. journal",
+        beforeSrc: listsbefore,
+        afterSrc: listsafter,
         description:
-          "The confusion between ‘Watchlist’ and ‘Lists’ is resolved with two preset lists: To Watch and Watched. Watched updates automatically after a review."
+          "‘Watchlist,’ ‘Lists,’ ‘Diary,’ ‘Journal’… too many confusing terms, that seemed like they meant the same thing. The redesign cleans this up with two built-in lists: To Watch and Watched. Watched updates automatically after a review, keeping it effortless. The old ‘Journal’ (really just recommended lists) now lives in Explore, while ‘Diary’ gets relabeled properly as Reviews."
       },
       {
-        title: "Consistent and descriptive sections",
+        title: "Film info organization",
+        beforeSrc: filmbefore,
+        afterSrc: filmafter,
         description:
-          "The articles section is clearly titled, while new labels and icons distinguish whether friends watched, reviewed, or interacted with a film."
+          "The old film pages had massive actor lists and walls of text. The redesign highlights just the main cast with clear icons, tucks similar films right under the streaming platforms, and trims down the mountain of text. Everything’s easier to scan at a glance without losing depth."
       }
     ]
   },
@@ -68,26 +82,28 @@ const problems = [
     features: [
       {
         title: "Friend activity visibility",
+        beforeSrc: friendbefore,
+        afterSrc: friendafter,
         description:
-          "Friends are shown in an organized layout with their activities displayed right beneath their names. Previously, this information was buried in profiles."
+          "Previously, if you wanted to know what your friends were up to, you had to dig through profiles. Now, activity is laid out cleanly right under each friend’s name — reviews, ratings, and lists are visible immediately."
       },
       {
         title: "Comment and collaboration features",
+        beforeSrc: commentbefore,
+        afterSrc: commentafter,
         description:
-          "A comment section fills blank space, encouraging conversation. Users can also collaborate on lists, making key social actions prominent."
+          "Blank space is put to work with a comment section that sparks conversation. On top of that, lists can now be collaborative, letting multiple people contribute. It turns passive lists into shared projects."
       },
       {
         title: "Direct access to platforms",
+        beforeSrc: filmbefore,
+        afterSrc: filmafter,
         description:
-          "‘Watch on’ links with platform icons connect users directly to where the movie is available. This can be personalized for each user."
+          "Instead of stopping at reviews, the redesign connects the dots: ‘Watch on’ buttons link straight to the streaming platforms where the film is available. Personalized icons make it clear which services each user actually has access to."
       }
     ]
   }
 ];
-
-  
-
-
 
 export default function PathSol() {
   return (

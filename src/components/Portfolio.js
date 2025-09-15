@@ -6,6 +6,7 @@ import GithubIcon from './GithubIcon';
 const nokaicover = new URL('./images/nokaicover.jpg', import.meta.url).href;
 const letter = new URL('./images/letter.png', import.meta.url).href;
 const patp = new URL('./images/pathimages/patp.png', import.meta.url).href;
+const pennstagram = new URL('./images/pennstagram.png', import.meta.url).href;
 
 import { Link } from 'react-router-dom';
 
@@ -24,7 +25,7 @@ const featuredProjects = [
 
     position: 'right',
 
-    github: '/projects/patp/top',
+    github: '/projects/patp',
   },
   {
     image_alt: 'letterboxed',
@@ -36,15 +37,15 @@ const featuredProjects = [
     ],
     technologies: [],
     position: 'left',
-    github: '/projects/letterboxd/top',
+    github: '/projects/letterboxd',
   },
   {
     image_alt: 'Pennstagram',
-    image_src: 'https://firebasestorage.googleapis.com/v0/b/jason-ren.appspot.com/o/pennbook.webp?alt=media&token=5fc86fba-f528-458b-850d-b3954ae6da14',
+    image_src: pennstagram,
     title: 'Pennstagram',
     description: [
       'A scalable social media platform built on the cloud.',
-      'Users can register accounts, post with hashtags, join real-time chat channels and read relevant posts based on preferred hashtags powered by distributed PageRank.',
+      'Users can register accounts, post with hashtags, join real-time chat channels. Personalized posts powered by distributed PageRank.',
     ],
     technologies: ['React', 'NodeJS', 'AWS EC2', 'Apache Spark', 'DynamoDB', 'Kafka'],
     position: 'right',
@@ -54,8 +55,7 @@ const featuredProjects = [
     image_src:  nokaicover,
     title: 'NokAI',
     description: [
-      'A multilingual iOS app I designed and developed to enable real-time voice calls with live transcription and translation, inspired by my own experiences navigating language barriers.',
-      'Streams audio, transcribes speech, and delivers translations. Includes user authentification, a friend system and call history.'
+      'A multilingual iOS app that streams audio, transcribes speech, and delivers translations. Includes user authentification, a friend system and call history.'
     ],
     technologies: ['SwiftUI', 'Agora SDK', 'Node.js', 'Websockets'],
     position: 'left',
@@ -66,13 +66,13 @@ const featuredProjects = [
 const portfolioProjects = [
   {
     title: 'Minesweeper',
-    link: '',
+    link: 'https://github.com/clew2027/Minesweeper',
     description: 'A minesweeper game, which implemented recursion, 2D arrays, iterators, and JUnit testing',
     technologies: ['Java'],
   },
   {
     title: 'Personal Website',
-    link: 'https://github.com/jren2/personal-website',
+    link: 'https://https://github.com/clew2027/personal-website-main',
     description: 'I created this website to experiment more with frontend technologies and showcase myself and my work',
     technologies: ['JavaScript', 'React', 'Tailwind'],
   },

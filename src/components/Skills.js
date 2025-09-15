@@ -145,9 +145,9 @@ function Skills() {
           </div>
           <div className="flex flex-col gap-8">
             <div className="w-full cursor-default flex flex-row justify-center">
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid  hover:scale-105 h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
+              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
           
-                <div className="group-hover:text-[#617891] duration-300 my-2 text-off-black text-xl">Software Development</div>
+                <div className="duration-300 my-2 text-off-black text-xl">Software Development</div>
                 <div className="text-off-black/70 text-lg">
                   <ul className="text-off-black/70">
                     <li className="list-element tracking-wide font-normal text-sm"> Java</li>
@@ -159,8 +159,8 @@ function Skills() {
                 </div>
               </div>
 
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid  hover:scale-105 h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
-                <div className="group-hover:text-[#617891] duration-300 my-2 text-off-black text-xl">Data Science</div>
+              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
+                <div className="duration-300 my-2 text-off-black text-xl">Data Science</div>
                 <div className="text-off-black/70 text-lg">
                   <ul className="text-off-black/70">
                     <li className="list-element tracking-wide font-normal text-sm"> Python</li>
@@ -176,9 +176,9 @@ function Skills() {
 
 
             <div className="w-full cursor-default flex flex-row justify-center">
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid  hover:scale-105 h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
+              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
           
-                <div className="group-hover:text-[#617891] duration-300 my-2 text-off-black text-xl">Design (UI/UX and more)</div>
+                <div className="duration-300 my-2 text-off-black text-xl">Design (UI/UX and</div>
                 <div className="text-off-black/70 text-lg">
                   <ul className="text-off-black/70">
                     <li className="list-element tracking-wide font-normal text-sm"> Figma</li>
@@ -190,8 +190,8 @@ function Skills() {
                 </div>
               </div>
 
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid hover:scale-105 h-fit xs:w-full sm:w-3/4 md:w-1/2 lg:w-3/4 xl:w-1/2 group m-auto duration-300 card text-left border-b-[#617891] border-b-8">
-              <div className="group-hover:text-[#617891] duration-300 mt-5 mb-2 text-off-black text-xl">Web Development</div>
+              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit xs:w-full sm:w-3/4 md:w-1/2 lg:w-3/4 xl:w-1/2 group m-auto duration-300 card text-left border-b-[#617891] border-b-8">
+              <div className="duration-300 mt-5 mb-2 text-off-black text-xl">Web Development</div>
               <div className="text-off-black/90 text-lg grid grid-cols-2 gap-4">
                 <div>
                   Frontend

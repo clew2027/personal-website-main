@@ -256,7 +256,7 @@ export default function PatpProjectPage() {
 <Results
   metrics={[
     { label: "Time from course search to submit schedule", value: "−32%", note: "From 8m → 3.1m in tests" },
-    { label: "Click reduction per task", value: "-78%", note: "Clicks required for degree planning, course scheduling, and schedule comparisons" },
+    { label: "Click reduction per task", value: "-60%", note: "Clicks required for degree planning, course scheduling, and schedule comparisons" },
     { label: "Ease-of-use score", value: "+78%", note: "From an average of 4.1/10 to 8.5/10" },
   ]}
   highlights={[

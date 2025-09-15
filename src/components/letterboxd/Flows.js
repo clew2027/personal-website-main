@@ -66,7 +66,7 @@ function SectionRow({ title, data }) {
 
       {/* Flow image on top */}
       <figure className="mb-6 border-1 border-grid overflow-hidden">
-        <div className="w-full aspect-[4/3] bg-white grid place-items-center">
+        <div className="w-full max-w-2xl aspect-[4/3] bg-white grid place-items-center mx-auto">
           {img ? (
             <img
               src={img}
@@ -82,6 +82,7 @@ function SectionRow({ title, data }) {
           {title}
         </figcaption>
       </figure>
+
 
       {/* Pros/Cons below */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

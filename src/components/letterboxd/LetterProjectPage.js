@@ -7,11 +7,10 @@ const profileFlowImg = new URL('../images/letterimages/profile.png', import.meta
 const searchFlowImg = new URL('../images/letterimages/search.png', import.meta.url).href;
 import UserFlows from "./Flows.js";
 import PathSol from "./pathsol.js";
-import DesignDeepDive from "./DesignDeepDive.js";
 import Results from "./Results.js";
 import WhatILearned from "./WhatILearned.js";
 
-const path = new URL('../images/pathimages/path.png', import.meta.url).href;
+const path = new URL('../images/letterimages/lcover.png', import.meta.url).href;
 
 
 export default function LetterProjectPage() {
@@ -271,15 +270,6 @@ export default function LetterProjectPage() {
 />
 
     <PathSol/>
-
-<DesignDeepDive
-  styleGuide={{
-    palette: [
-      { name: "Red", hex: "#990000" },
-      { name: "Blue", hex: "#011F5B" },
-    ]
-  }}
-/>
 
 <Results
   metrics={[
