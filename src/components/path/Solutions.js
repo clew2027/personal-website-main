@@ -17,7 +17,7 @@ import React from "react";
  */
 export default function Solution({ problems = [] }) {
   return (
-    <section id="solution" className="bg-white-background px-0">
+    <section id="solution" className="bg-transparent px-0">
       {/* Top border line */}
       <div className="w-full h-5 border-1 border-t-0 border-grid" />
 
@@ -90,7 +90,7 @@ function ImageCard({ label, src, alt }) {
   return (
     <figure className="relative border-1 border-grid overflow-hidden w-full">
       {/* Keeps images neat and consistent; swap to `aspect-video` if you prefer */}
-      <div className="w-full aspect-[16-11] bg-[#f7f7f7]">
+      <div className="w-full aspect-[16-11]">
         <img
           src={src}
           alt={alt}
@@ -98,7 +98,7 @@ function ImageCard({ label, src, alt }) {
           loading="lazy"
         />
       </div>
-      <figcaption className="absolute top-2 left-2 text-xs px-2 py-1 border-1 border-grid bg-white/90 text-off-black">
+      <figcaption className="absolute top-2 left-2 text-xs px-2 py-1 border-1 border-grid text-off-black">
         {label}
       </figcaption>
     </figure>

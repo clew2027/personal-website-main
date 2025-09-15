@@ -10,10 +10,12 @@ import DesignIteration from "./DesignIteration.js";
 import Results from "./Results.js";
 import WhatILearned from "./WhatILearned.js";
 
+const path = new URL('../images/pathimages/path.png', import.meta.url).href;
+
 
 export default function PatpProjectPage() {
   return (
-    <main className="bg-white-background text-black font-sans">
+    <main id="top" className="bg-white-background text-black font-sans">
         <PSide/>
       {/* Top grid line with border style */}
       <div className="bg-white-background px-48">
@@ -63,14 +65,12 @@ export default function PatpProjectPage() {
 
           {/* Right: mock image in bordered card */}
           <div className="lg:col-span-7">
-            <div className="relative group rounded-lg overflow-hidden border-1 border-grid bg-white">
+            <div className="relative group rounded-lg overflow-hidden border border-grid">
               <img
                 alt="Path@Penn mock"
-                className="w-full h-auto block"
-                src="/images/patpleft1.png" /* <-- replace with your image */
+                src={path} /* <-- replace with your image */
+                className="w-full h-full object-cover rounded-lg"
               />
-              {/* optional hover slide panel like your Portfolio cards */}
-              {/* <div className="group-hover:right-0 absolute top-0 -right-[50%] w-1/2 h-full border-l-1 border-grid bg-white duration-200 ease-in-out"></div> */}
             </div>
           </div>
         </div>
@@ -255,23 +255,37 @@ export default function PatpProjectPage() {
 
 <Results
   metrics={[
-    { label: "Time-to-Schedule", value: "−32%", note: "From 12m → 8.1m in tests" },
-    { label: "Confident Decisions", value: "+24%", note: "Self-reported" },
-    { label: "Support Pings", value: "−18%" },
+    { label: "Time from course search to submit schedule", value: "−32%", note: "From 8m → 3.1m in tests" },
+    { label: "Click reduction per task", value: "-78%", note: "Clicks required for degree planning, course scheduling, and schedule comparisons" },
+    { label: "Ease-of-use score", value: "+78%", note: "From an average of 4.1/10 to 8.5/10" },
   ]}
   highlights={[
-    "Inline prereq + seat visibility reduced dead-ends",
-    "Sandbox flows improved exploration without risk",
-    "Sticky cart/schedule boosted comparison speed",
+    "Students found it refreshing that all relevant information is placed conveniently",
+    "Sandbox flows improved exploration without the stress of 'messing up' students' real plan",
+    "88% reported less frustration and overwhelming-ness with clearer progress markers guiding each step",
   ]}
 />
 
 <WhatILearned
   lessons={[
-    { title: "Validate early, not just intuit", detail: "Benchmarks and user tests corrected my assumptions about density and action placement." },
-    { title: "Design for flow, not pages", detail: "Keeping cart and schedule visible removed costly context switching." },
-    { title: "Name the primitives", detail: "Atomic design helped keep variants consistent across states." },
+    { 
+      title: "Validate early, not just intuit", 
+      detail: "Benchmarks and user tests corrected assumptions about density, action placement, and flows I initially thought would work." 
+    },
+    { 
+      title: "Design for flow, not pages", 
+      detail: "Though different screens could theoretically keep things clean and separate, users need design flows that feel continuous and natural." 
+    },
+    { 
+      title: "Navigate Bias in the Redesign Process", 
+      detail: "Being too familiar with Path@Penn made it harder to see fresh possibilities. I overcame this by grounding decisions in interviews and feedback, even from students outside Penn, to broaden my perspective." 
+    },
+    { 
+      title: "Iteration is Key", 
+      detail: "No design is ever perfect. Iterating—through repeated interviews, redesigns, and refinements—was invaluable in aligning aesthetics and functionality with user needs." 
+    },
   ]}
+  
 />
     <Contact/>
     </main>

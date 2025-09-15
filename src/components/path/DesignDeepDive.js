@@ -1,6 +1,9 @@
 import React from "react";
 import Frame from "./Frame";
 const allcolors = new URL('../images/pathimages/allcolors.png', import.meta.url).href;
+const atom = new URL('../images/pathimages/atom.png', import.meta.url).href;
+const molecules = new URL('../images/pathimages/molecule.png', import.meta.url).href;
+const organisms = new URL('../images/pathimages/organism.png', import.meta.url).href;
 
 /**
  * Props:
@@ -62,14 +65,17 @@ export default function DesignDeepDive({ styleGuide, atomic }) {
 
       {/* Atomic Design */}
       <section>
-        <h3 className="text-xl font-semibold text-off-black mb-4">Atomic Design</h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Block title="Atoms" items={atomic?.atoms} />
-          <Block title="Molecules" items={atomic?.molecules} />
-          <Block title="Organisms" items={atomic?.organisms} />
-          {atomic?.templates && <Block title="Templates" items={atomic.templates} />}
-          {atomic?.pages && <Block title="Pages" items={atomic.pages} />}
+      <div className="mx-auto max-w-5xl px-4">
+        <h3 className="text-2xl font-semibold text-off-black tracking-tight mb-6">
+          Atomic Design
+        </h3>
+
+        <div className="space-y-6">
+          <FigureCard title="Atoms" caption="Buttons, inputs, icons, tokens" img={atom} />
+          <FigureCard title="Molecules" caption="Input groups, tags, compact cards" img={molecules} />
+          <FigureCard title="Organisms" caption="Registration table, filters, degree planner" img={organisms} />
         </div>
+      </div>
       </section>
     </Frame>
   );
@@ -85,3 +91,39 @@ function Block({ title, items = [] }) {
     </article>
   );
 }
+
+function FigureCard({ title, caption, img }) {
+    const handleClick = () => {
+      const dlg = document.createElement("dialog");
+      dlg.className =
+        "backdrop:bg-black/60 p-0 rounded-xl overflow-hidden border border-grid";
+      dlg.innerHTML = `
+        <img src="${img}" alt="${title}" style="max-width:90vw;max-height:85vh;display:block" />
+      `;
+      dlg.onclick = () => dlg.close();
+      document.body.appendChild(dlg);
+      dlg.showModal();
+    };
+  
+    return (
+      <figure className="rounded-2xl border border-grid bg-neutral-50 p-4">
+        <div className="mb-3 flex items-baseline justify-between">
+          <h4 className="text-base font-medium text-off-black">{title}</h4>
+          <span className="text-xs text-neutral-500">{caption}</span>
+        </div>
+  
+        <div
+          onClick={handleClick}
+          className=" w-full overflow-hidden rounded-xl border border-dashed border-grid bg-[#CFD8DC] grid place-items-center cursor-zoom-in"
+        >
+          <img 
+            src={img}
+            alt={title}
+            className="h-full w-full object-contain"
+            loading="lazy"
+          />
+        </div>
+      </figure>
+    );
+  }
+  

@@ -11,7 +11,6 @@ function Overlay() {
         {/* Anchor links — update IDs below to match your sections */}
         <a href="#about" className="text-off-black/60 hover:text-off-black duration-200">About</a>
         <a href="#skills" className="text-off-black/60 hover:text-off-black duration-200">Skills</a>
-        <a href="#experience" className="text-off-black/60 hover:text-off-black duration-200">Experience</a>
         <a href="#portfolio" className="text-off-black/60 hover:text-off-black duration-200">Projects</a>
         <a href="#contact" className="text-off-black/60 hover:text-off-black duration-200">Contact</a>
       </nav>

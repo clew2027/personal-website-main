@@ -24,7 +24,7 @@ const featuredProjects = [
 
     position: 'right',
 
-    github: '/projects/patp',
+    github: '/projects/patp/top',
   },
   {
     image_alt: 'letterboxed',
@@ -36,7 +36,7 @@ const featuredProjects = [
     ],
     technologies: [],
     position: 'left',
-    github: 'https://www.figma.com/design/lGwveN5JpSP4N2Emb6DSnH/LetterBoxd?node-id=0-1&t=XsVnrEGqV6oX2d7n-0',
+    github: '/projects/letterboxd/top',
   },
   {
     image_alt: 'Pennstagram',

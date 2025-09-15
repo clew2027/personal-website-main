@@ -9,7 +9,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Portfolio from './components/Portfolio';
 import PatpProjectPage from './components/path/PatpProjectPage';
-
+import LetterProjectPage from './components/letterboxd/LetterProjectPage';
 import './index.css';
 
 function IntroAnimation() {
@@ -67,7 +67,8 @@ function AppBody({ sidebar, setSidebar }) {
           />
 
           {/* Path@Penn project page */}
-          <Route path="/projects/patp" element={<PatpProjectPage />} />
+          <Route path="/projects/patp/top" element={<PatpProjectPage />} />
+          <Route path="/projects/letterboxd/top" element={<LetterProjectPage />} />
         </Routes>
       </div>
     </>

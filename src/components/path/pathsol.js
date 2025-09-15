@@ -19,107 +19,104 @@ const termplanbefore = new URL('../images/pathimages/termplanbefore.png', import
 const aftersubmit = new URL('../images/pathimages/aftersubmit.png', import.meta.url).href;
 const submitfigma = new URL('../images/pathimages/submitfigma.png', import.meta.url).href;
 
-
 const problems = [
-  {
-    id: "p1",
-    title: "Problem 1: Inefficient Actions & Multi-Step Processes",
-    features: [
-      {
-        title: "Sandbox for add/remove with instant preview",
-        beforeSrc: p1sandboxbefore,
-        afterSrc: p1sandboxafter,
-        description:
-        "Users can instantly compare schedules by toggling a class on or off, or remove it entirely with the ‘x’ button if they no longer want it in their plan.",
-        notes: "Previously to remove a class: click → remove → confirm (3 steps). Now: 1-step toggle.",
-      },
-      {
-        title:
-          "Drag-and-drop priority list",
-        beforeSrc: prioritybefore,
-        afterSrc: priorityafter,
-        description:
-          "Previously, students had to assign priorities when adding each class to the cart, which was time-consuming and often premature since schedules were still in flux.By moving prioritization to just before submission, students can finalize their choices once they’ve explored all options. This streamlines the process, reduces unnecessary rework, and aligns better with how students actually plan their schedules—iterating first, then committing.",
-        notes: "Previously to set priorities: add priority status (primary or alternate) to each class when adding to cart. Now: Prioritize right before submitting"
-      },
-
-      {
-        title: "Time filter with drag interaction",
-        beforeSrc: timebefore,
-        afterSrc: timeafter,
-        description:
-          "Helps quickly narrow to courses that actually fit the schedule.",
-      },
-      
-    ],
-  },
-  {
-    id: "p2",
-    title: "Problem 2: Relevant Information Organization",
-    features: [
-      {
-        title: "Search tab + Course info next to calendar",
-        beforeSrc: p1sandboxbefore,
-        afterSrc: p1sandboxafter,
-        description:
-          "Reduces context switching and surfaces relevant details alongside the calendar for quicker scanning.",
-      },
-      {
-        title: "Course reviews tab next to course info + Trimmed Descriptions",
-        beforeSrc: reviewbefore,
-        afterSrc: reviewafter,
-        description:
-          "Adds at-a-glance quality signals without leaving the decision surface.",
-      },
-      {
-        title: "Degree audit & plans across semesters",
-        beforeSrc: termplanbefore,
-        afterSrc: auditafter,
-        description:
-          "Makes progress and projected completion visible, improving long-term planning confidence.",
-      },
-    ],
-  },
-  {
-    id: "p3",
-    title: "Problem 3: Poor Visibility into System Status and Important Functions",
-    features: [
+    {
+      id: "p1",
+      title: "Problem 1: Inefficient Actions & Multi-Step Processes",
+      features: [
         {
-            title: "Automated permission requests and cues for unmet prereqs",
-            beforeSrc: permissionbefore,
-            afterSrc: permissionafter,
-            description:
-              "Path@Penn does not explicitly tell students that they do not meet class prerequisites, leaving students to figure it out themselves. Additionally, the request permission is small and tucked away in the bottom left corner.",
-          },
-
-          {
-            title: "Class Full",
-            beforeSrc: permissionbefore,
-            afterSrc: permissionafter,
-            description:
-              "Path@Penn does not explicitly tell students that they do not meet class prerequisites, leaving students to figure it out themselves. Additionally, the request permission is small and tucked away in the bottom left corner.",
-          },
-      
-      {
-        title:
-          "Projected degree progress visualization (striped progress bar)",
-        beforeSrc: editplanbefore,
-        afterSrc: editplanafter,
-        description:
-          "Shows impact of choices on overall completion in real time.",
-      },
-
-      {
-        title:
-          "Confirmation of Submission",
-        beforeSrc: aftersubmit,
-        afterSrc: submitfigma,
-        description:
-          "Shows impact of choices on overall completion in real time.",
-      },
-    ],
-  },
-];
+          title: "Sandbox scheduling with instant preview",
+          beforeSrc: p1sandboxbefore,
+          afterSrc: p1sandboxafter,
+          description:
+            "Students can toggle a class on/off to instantly preview schedule changes, or remove it with a single click. This reduces friction when exploring options.",
+          notes:
+            "Before: click → remove → confirm (3 steps). After: single toggle or × (1 step)."
+        },
+        {
+          title: "Drag-and-drop priority list (commit late, explore early)",
+          beforeSrc: prioritybefore,
+          afterSrc: priorityafter,
+          description:
+            "Prioritization moves from add-to-cart to just before submission, aligning with real planning behavior—explore broadly first, then commit. This cuts premature decisions and rework.",
+          notes:
+            "Before: set Primary/Alternate at add time for every class. After: batch prioritize immediately before submitting."
+        },
+        {
+          title: "Time filter with draggable range",
+          beforeSrc: timebefore,
+          afterSrc: timeafter,
+          description:
+            "Interactive and less clunky handles let students quickly exclude unavailable time blocks and narrow results to courses that actually fit their schedules.",
+          notes: "Instant calendar feedback; supports include/exclude windows (e.g., labs, work)."
+        }
+      ]
+    },
+    {
+      id: "p2",
+      title: "Problem 2: Relevant Information Organization",
+      features: [
+        {
+          title: "Unified search with course info beside the calendar",
+          beforeSrc: p1sandboxbefore,
+          afterSrc: p1sandboxafter,
+          description:
+            "Consolidates search results and key details adjacent to the calendar, reducing context switching and enabling faster scanning and decisions."
+        },
+        {
+          title: "Reviews panel + condensed descriptions",
+          beforeSrc: reviewbefore,
+          afterSrc: reviewafter,
+          description:
+            "Path@Penn does not have course reviews, instead students have to navigate to a whole different platform (PennCourseReview). In the redesign, decisions stay on the same surface without detours."
+        },
+        {
+          title: "Degree audit & multi-term planning",
+          beforeSrc: termplanbefore,
+          afterSrc: auditafter,
+          description:
+            "Connects selections to requirement progress across semesters, improving long-term planning confidence and reducing Microsoft Excel planning that students end up doing."
+        }
+      ]
+    },
+    {
+      id: "p3",
+      title: "Problem 3: Poor Visibility into System Status & Critical Actions",
+      features: [
+        {
+          title: "Automated prerequisite checks with clear request flow",
+          beforeSrc: permissionbefore,
+          afterSrc: permissionafter,
+          description:
+            "Inline prerequisite status and unmet-requirement cues make eligibility obvious. Prominent CTAs guide students to request permissions when needed."
+        },
+        {
+          title: "Section capacity & waitlist transparency",
+          beforeSrc: permissionbefore,
+          afterSrc: permissionafter,
+          description:
+            "A clear ‘Class Full’ state surfaces to reinform users",
+        },
+        {
+          title: "Projected degree progress visualization",
+          beforeSrc: editplanbefore,
+          afterSrc: editplanafter,
+          description:
+            "Progress bars reflect the impact of plan changes on overall completion (major/minor/distribution), using accessible patterns beyond color alone."
+        },
+        {
+          title: "Submission confirmation & next steps",
+          beforeSrc: aftersubmit,
+          afterSrc: submitfigma,
+          description:
+            "A definitive confirmation state summarizes results (enrolled, alternates, pending permissions), offers an undo window, and provides export/calendar sync and receipt.",
+          notes:
+            "Sets clear expectations and reduces post-submission uncertainty."
+        }
+      ]
+    }
+  ];
+  
 
 
 
@@ -144,6 +141,18 @@ export default function PathSol() {
           Before I go into the details of everything I designed, here is a video
           demo of the whole flow:
         </p>
+        <p className="mt-2 text-sm text-gray-500">
+        If the video does not load, 
+        <a 
+            href="https://app.screencastify.com/watch/EOfa9wMFDkIilFVUkKYk" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-secondary-violet underline"
+        >
+            click here to view it directly.
+        </a>
+        </p>
+
 
         {/* Video embed */}
         <div className="relative border-1 border-grid rounded-lg overflow-hidden w-full aspect-video">

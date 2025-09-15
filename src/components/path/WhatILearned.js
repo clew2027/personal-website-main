@@ -12,7 +12,7 @@ export default function WhatILearned({ lessons = [] }) {
 
       <div className="space-y-6">
         {lessons.map((l, i) => (
-          <article key={i} className="border-1 border-grid rounded-lg p-6 bg-white">
+          <article key={i} className="border-1 border-grid rounded-lg p-6">
             <h3 className="text-lg font-semibold text-off-black">{l.title}</h3>
             <p className="text-off-black/80 mt-2 leading-relaxed">{l.detail}</p>
           </article>
