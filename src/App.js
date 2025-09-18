@@ -12,7 +12,6 @@ import PatpProjectPage from './components/path/PatpProjectPage';
 import LetterProjectPage from './components/letterboxd/LetterProjectPage';
 
 import ScrollToTop from './components/ScrollToTop'; // ensure this file exists
-
 function AppBody({ sidebar, setSidebar }) {
   const location = useLocation();
   const hideSidebar = location.pathname.startsWith('/projects/');
@@ -21,7 +20,7 @@ function AppBody({ sidebar, setSidebar }) {
     <>
       {/* Sidebar is NOT rendered on project pages */}
       {!hideSidebar && <Overlay sidebar={sidebar} setSidebar={setSidebar} />}
-
+      <div className="intro-textAnimation w-0 overflow-hidden ml-[50vw] mt-[30vh] font-medium text-8xl fixed z-50"> Charlotte </div> <div className="intro-dotAnimation w-full h-full z-50 fixed overflow-hidden"> <div className="intro-slashAnimation w-full fixed h-full bg-black z-40" /> </div> <div className="intro-mask fixed w-full h-full bg-white-background z-40" />
       <div
         id="body"
         className={`${sidebar && !hideSidebar ? 'translate-x-[26vw]' : ''} font-custom duration-500`}
