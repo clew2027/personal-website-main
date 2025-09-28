@@ -65,6 +65,12 @@ const featuredProjects = [
 
 const portfolioProjects = [
   {
+    title: 'PennDiningApp',
+    link: 'https://github.com/clew2027/PennDiningApp',
+    description: 'An app to display all dining options @Penn. Built in Swift (SwiftUI, MapKit, WebKit, UserDefaults) and integrated a REST API to display dining hall hours and menus',
+    technologies: ['Swift'],
+  },
+  {
     title: 'Minesweeper',
     link: 'https://github.com/clew2027/Minesweeper',
     description: 'A minesweeper game, which implemented recursion, 2D arrays, iterators, and JUnit testing',
