@@ -39,7 +39,6 @@ function Home() {
             <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
           </div>
           <div id="home" className="group relative cursor-default w-fit overflow-hidden">
-            Home
             <div className="group-hover:left-0 bottom-[1px] duration-150 absolute w-full h-[2px] bg-off-black -left-full" />
           </div>
         </div>

@@ -120,40 +120,9 @@ export default function PathSol() {
 
         {/* Header */}
         <h2 className="text-2xl font-medium mb-6 text-off-black">Solution</h2>
-
-        {/* Intro text */}
-        <p className="text-base leading-relaxed max-w-3xl mb-8 text-off-black/80">
-          Before I go into the details of everything I designed, here is a video
-          demo of the whole flow:
-        </p>
-        <p className="mt-2 text-sm text-gray-500">
-        If the video does not load, 
-        <a 
-            href="https://app.screencastify.com/watch/EOfa9wMFDkIilFVUkKYk" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-secondary-violet underline"
-        >
-            click here to view it directly.
-        </a>
-        </p>
-
-
-        {/* Video embed */}
-        <div className="relative border-1 border-grid rounded-lg overflow-hidden w-full aspect-video">
-          <iframe
-            src="https://app.screencastify.com/watch/EOfa9wMFDkIilFVUkKYk/embed"
-            title="Charlotte Lew - Path@Penn Redesign Demo"
-            className="w-full h-full"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
+      
       </div>
       <Solution problems={problems} />
-
     </section>
   );
 }

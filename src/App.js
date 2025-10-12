@@ -34,9 +34,9 @@ function AppBody({ sidebar, setSidebar }) {
               <>
                 <div id="home" className="w-1 h-1 absolute" />
                 <Home />
+                <Portfolio />
                 <About />
                 <Skills />
-                <Portfolio />
                 <Contact />
               </>
             }
