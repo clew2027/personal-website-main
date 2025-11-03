@@ -176,7 +176,7 @@ function Skills() {
             <div className="w-full cursor-default flex flex-row justify-center">
               <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
           
-                <div className="duration-300 my-2 text-off-black text-xl">Design (UI/UX and more)</div>
+                <div className="duration-300 my-2 text-off-black text-xl">Design (UI/UX & more)</div>
                 <div className="text-off-black/70 text-lg">
                   <ul className="text-off-black/70">
                     <li className="list-element tracking-wide font-normal text-sm"> Figma</li>

@@ -1,5 +1,6 @@
 /* components/Problem.js */
 import React from 'react';
+import Frame from './Frame';
 
 /**
  * Problem section
@@ -7,96 +8,85 @@ import React from 'react';
  *  - journeySrc: string (required)  → image URL for the journey map
  *  - affmapSrc: string (required)   → image URL for the affinity map
  */
-export default function Problem({ journeySrc, affmapSrc }) {
+export default function Problem() {
   return (
-    <section id="problem" className="bg-white-background px-48">
-      {/* Top border line */}
-      <div className="w-full h-5 border-1 border-t-0 border-grid" />
+    <Frame>
+      {/* Header */}
+      <p className="text-xs tracking-widest text-off-black/50">PROBLEM DEFINITION</p>
+       {/* Key Pain Points */}
+       <h3 className="text-xl font-semibold text-off-black mt-6 mb-6 tracking-wide">
+        The 3 Main Problems
+      </h3>
 
-      {/* Framed container */}
-      <div className="relative w-full border-1 border-t-0 border-grid p-10">
-        {/* Corner accents */}
-        <div className="absolute -top-3 -left-3 w-3 h-3 border-r-1 border-b-1 border-off-black">
-          <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
-        </div>
 
-        {/* Header */}
-        <h2 className="text-2xl font-medium mb-4 text-off-black">Problem</h2>
+      <div className="space-y-12">
 
-        {/* Narrative */}
-        <div className="text-off-black/80 space-y-4 max-w-3xl mb-10">
-          <p>
-            It seemed that students struggle to build schedules efficiently: course details, requirements, and actions are split across
-            multiple surfaces, making it hard to compare options and understand trade-offs. Key cues (labels, checkboxes,
-            progress signals) are easy to miss, so confidence drops at the moment of decision.
-          </p>
-          <p>
-            To understand where friction accumulates at each step, I first mapped the user journey and annotated pain points. Then I
-            synthesized interview data with an affinity map to cluster recurring themes and opportunities.
-          </p>
-        </div>
+      {/* PROBLEM #1 */}
+      <div>
+        <p className="text-xs tracking-widest text-off-black/50 mb-2">PROBLEM #1</p>
+        <p className="text-xl leading-relaxed max-w-3xl font-medium">
+          Inefficient Actions & Multi-Step Processes
+        </p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug mb-4">
+          Key tasks—like dropping a class, excluding times, or submitting permissions—require too many clicks and steps. Users want fast, intuitive actions directly tied to outcomes.
+        </p>
 
-        {/* Journey Map (image card) */}
-        <div className="mb-8">
-          <div className="relative border-1 border-grid rounded-lg overflow-hidden w-full">
-            <img
-              src={journeySrc}
-              alt="User Journey Map highlighting steps and frictions"
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          <div className="text-sm text-off-black/60 mt-2">Figure: Mapping the user journey and frictions.</div>
-        </div>
+        <p className="text-sm font-semibold mb-1">EXAMPLE</p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl mb-4">
+          Dropping a course takes four or more clicks across multiple screens.
+        </p>
 
-        {/* Affinity Map intro */}
-        <div className="text-off-black/80 max-w-3xl mb-4">
-          Affinity mapping to group similar information into
-          themes and patterns behind confusion (scattered info), low discoverability (hidden cues), and
-          decision friction (comparison across tabs).
-        </div>
+        <p className="text-sm font-semibold mb-1">IMPACT</p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl">
+          Users waste time, get frustrated, and are more likely to make mistakes or abandon tasks.
+        </p>
+      </div>
 
-        {/* Affinity Map (image card) */}
-        <div>
-          <div className="relative border-1 border-grid rounded-lg overflow-hidden w-full">
-            <img
-              src={affmapSrc}
-              alt="Affinity Map clustering research findings and design ideas"
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          <div className="text-sm text-off-black/60 mt-2">Figure: Affinity map of themes and opportunities.</div>
-        </div>
+      {/* PROBLEM #2 */}
+      <div>
+        <p className="text-xs tracking-widest text-off-black/50 mb-2">PROBLEM #2</p>
+        <p className="text-xl leading-relaxed max-w-3xl font-medium">
+          Confusing Information Organization
+        </p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug mb-4">
+          Important course details and scheduling info are scattered and cluttered. Too much text, links, and overlapping calendars make it hard to compare options and plan efficiently.
+        </p>
 
-         {/* Key Pain Points */}
-         <h3 className="text-xl font-semibold text-off-black mt-6 mb-6 tracking-wide">
-          The 3 Main Problems
-        </h3>
+        <p className="text-sm font-semibold mb-1">EXAMPLE</p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl mb-4">
+          Course carts show rankings and secondary details before critical schedule conflicts, forcing users to hunt for what matters most.
+        </p>
 
-        <ul className="list-decimal list-inside space-y-6 text-off-black/80 max-w-3xl mb-8">
-          <li>
-            <strong>Inefficient Actions &amp; Multi-Step Processes</strong>
-            <p className="ml-4 mt-1">
-              Tasks like dropping a class, excluding times, or submitting permission requests require multiple clicks or steps.
-              Users want actions to be quick, intuitive, and clearly connected to outcomes.
-            </p>
-          </li>
-          <li>
-            <strong>Confusing Information Organization</strong>
-            <p className="ml-4 mt-1">
-              Users get overwhelmed by too much text, too many links, and excessive calendar details.
-              Confusing features like ranking systems, alternative carts, or overlapping schedules make it hard to plan efficiently.
-            </p>
-          </li>
-          <li>
-            <strong>Poor Visibility into System Status and Critical Actions</strong>
-            <p className="ml-4 mt-1">
-              Important information (credits left, course difficulty, lecture vs recitation, cart status) is either hard to see or easy to overlook.
-              Users want essential info prioritized and presented clearly in one view.
-            </p>
-          </li>
-        </ul>
+        <p className="text-sm font-semibold mb-1">IMPACT</p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl">
+          Users feel overwhelmed, lose confidence in their choices, and struggle to plan effectively.
+        </p>
+      </div>
+
+      {/* PROBLEM #3 */}
+      <div>
+        <p className="text-xs tracking-widest text-off-black/50 mb-2">PROBLEM #3</p>
+        <p className="text-xl leading-relaxed max-w-3xl font-medium">
+          Inefficient Scheduling & Poor Visibility
+        </p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug mb-4">
+          Students have trouble building schedules because details, requirements, and actions are split across multiple screens. Key cues—labels, checkboxes, progress signals—are easy to miss, eroding confidence at the point of decision.
+        </p>
+
+        <p className="text-sm font-semibold mb-1">EXAMPLE</p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl mb-4">
+          Credits, course requirements, and schedule conflicts are displayed separately, requiring constant back-and-forth navigation.
+        </p>
+
+        <p className="text-sm font-semibold mb-1">IMPACT</p>
+        <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl">
+          Users spend extra time planning, feel uncertain about their choices, and risk making errors when finalizing schedules.
+        </p>
 
       </div>
-    </section>
+
+
+      </div>
+    </Frame>
   );
 }

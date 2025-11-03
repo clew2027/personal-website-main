@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from 'react';
-const headshot = new URL('./images/portrait.jpg', import.meta.url).href;
+const headshot = new URL('./images/c.jpg', import.meta.url).href;
 
 function Home() {
   useEffect(() => {

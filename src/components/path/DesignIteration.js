@@ -20,13 +20,17 @@ const audits = new URL('../images/pathimages/auditplanversions.png', import.meta
 export default function DesignIteration({ iterations = [], final }) {
     return (
         <Frame>
-          <h2 className="text-2xl font-medium text-off-black mb-8">
-            Design Iteration
-          </h2>
+          <p className="text-xs tracking-widest text-off-black/50 mb-2">DESIGN ITERATION</p>
+          <p className="text-xl leading-relaxed max-w-3xl">
+            Testing, feedback, and refinement.
+          </p>
+          <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug mb-6">
+            The design process involved multiple iterations based on user feedback and usability testing. Below are key versions and the evolution of the design. Changes focused on improving usability, visual hierarchy, and overall user experience.
+          </p>
     
           {/* --- Version 1 --- */}
             <div className="mb-12">
-            <h3 className="text-xl font-semibold text-off-black mb-4">Initial Hi-Fi</h3>
+            <h3 className="text-xl leading-relaxed max-w-3xl mb-4">Initial Hi-Fi</h3>
             <div className="grid md:grid-cols-2 gap-6">
                 <figure className="border-1 border-grid rounded-lg overflow-hidden">
                 <div className="w-full bg-[#f7f7f7]">
@@ -73,7 +77,7 @@ export default function DesignIteration({ iterations = [], final }) {
     
           {/* --- Version 2 --- */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold text-off-black mb-4">Through several rounds of changes, feedback, and interviews…</h3>
+            <h3 className="text-xl leading-relaxed max-w-3xl mb-4">Through several rounds of changes, feedback, and interviews…</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <figure className="border-1 border-grid rounded-lg overflow-hidden">
                 <div className="w-full bg-[#f7f7f7]">
@@ -90,7 +94,7 @@ export default function DesignIteration({ iterations = [], final }) {
     
           {/* --- Photo Audits --- */}
           <div>
-            <h3 className="text-xl font-semibold text-off-black mb-4">Iterations in Degree Planning</h3>
+            <h3 className="text-xl leading-relaxed max-w-3xl mb-4">Iterations in Degree Planning</h3>
             <figure className="border-1 border-grid rounded-lg overflow-hidden">
               <div className="w-full bg-[#f7f7f7]">
                 <img src={audits} alt="Audit Plan Versions" className="w-full h-full object-cover" />

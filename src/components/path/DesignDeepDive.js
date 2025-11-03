@@ -23,11 +23,14 @@ const organisms = new URL('../images/pathimages/organism.png', import.meta.url).
 export default function DesignDeepDive({ styleGuide, atomic }) {
   return (
     <Frame>
-      <h2 id="designdeepdive" className="text-2xl font-medium text-off-black mb-8">Design Deep Dive</h2>
+      <p className="text-xs tracking-widest text-off-black/50 mb-2">DESIGN DEEP DIVE</p>
+      <p className="text-xl leading-relaxed max-w-3xl"> Colors, style, and other design choices</p>
+      <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug mb-8">
+      The redesign preserves the Penn brand, while creating a modern, approachable, and consistent experience for students.
+      </p>
 
       {/* Style Guide */}
       <section className="mb-12">
-        <h3 className="text-xl font-semibold text-off-black mb-4">Style Guide</h3>
 
         {/* Colors */}
         <div className="mb-6">
@@ -65,9 +68,9 @@ export default function DesignDeepDive({ styleGuide, atomic }) {
 
       {/* Atomic Design */}
       <section>
-      <div className="mx-auto max-w-5xl px-4">
-        <h3 className="text-2xl font-semibold text-off-black tracking-tight mb-6">
-          Atomic Design
+      <div className="max-w-5xl px-4">
+        <h3 className="text-sm tracking-widest text-off-black/60 mb-2">
+          ATOMIC DESIGN
         </h3>
 
         <div className="space-y-6">
@@ -126,4 +129,3 @@ function FigureCard({ title, caption, img }) {
       </figure>
     );
   }
-  

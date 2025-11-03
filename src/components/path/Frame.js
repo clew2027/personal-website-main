@@ -3,7 +3,7 @@ import React from "react";
 /** Reusable framed box with corner accents */
 export default function Frame({ className = "", children }) {
   return (
-    <section className={`bg-white-background px-48 ${className}`}>
+    <section className={`bg-white-background pr-0 pl-48 ${className}`}>
       {/* Top border strip */}
       <div className="w-full h-5 border-1 border-t-0 border-grid" />
 
