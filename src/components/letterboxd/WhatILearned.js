@@ -8,7 +8,8 @@ import Frame from "./Frame";
 export default function WhatILearned({ lessons = [] }) {
   return (
     <Frame>
-      <h2 id="whatilearned" className="text-2xl font-medium text-off-black mb-8">What I Learned</h2>
+      <p className="text-xs tracking-widest text-off-black/50 mb-2">WHAT I LEARNED</p>
+
 
       <div className="space-y-6">
         {lessons.map((l, i) => (

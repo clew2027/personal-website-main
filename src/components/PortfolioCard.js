@@ -2,44 +2,46 @@ import React from 'react';
 import GithubIcon from './GithubIcon';
 
 function PortfolioCard({
-  index, title, description, technologies, link,
+  index, title, description, technologies, link, type
 }) {
   return (
     <div
-  className={`
-    border-grid border-t-1 project-card p-6 cursor-default group
-    hover:scale-100 duration-200 overflow-hidden relative w-full h-full
-    ${index === 1 || index === 2 ? 'lg:border-l-1' : ''}
-  `}
->
-      <a 
-        href={link}
-        className="font-medium text-xl tracking-wide mt-5 group-hover:text-secondary-violet"
-      >
-        {title}
-      </a>
-      <div className="text-off-black/70 text-base mt-2">
-        {description}
+      className={`
+        border-grid border-t-1 project-card p-6 cursor-default group
+        hover:scale-100 duration-200 overflow-hidden relative w-full h-full rounded-md
+        ${index === 1 || index === 2 ? 'lg:border-l-1' : ''}
+      `}
+    >
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+        <div className="text-off-black font-medium text-lg">↳ {title}</div>
+        <div className="text-off-black/70 text-sm md:ml-4">{type}</div>
       </div>
-      <div className="mt-4 text-sm text-off-black/50">
-        {
-          technologies.map((technology, index) => (
-            <span key={technology} className="mr-2">
-              {technology}
-            </span>
-          ))
-        }
+      <div className="relative w-full h-48 mb-4 rounded-lg">
+        {/* Placeholder for the image */}
+        <img
+          src="/path/to/image.jpg" // Replace with the actual image path
+          alt={title}
+          className="w-full h-full object-cover rounded-lg"
+        />
       </div>
-
-      <div className="flex">
-        {
-        link && (
-          <a href={link} className="w-fit h-fit z-30 ml-auto mt-2 hover:text-secondary-violet" aria-label="GitHub" target="_blank" rel="noreferrer" cursorshover="true">
-            <GithubIcon />
-          </a>
-        )
-      }
+      <div className="text-off-black/70 text-base mb-2">{description}</div>
+      <div className="text-off-black/50 text-sm mb-2">
+        {technologies.map((technology) => (
+          <span key={technology} className="mr-2">
+            {technology}
+          </span>
+        ))}
       </div>
+      {link && (
+        <a
+          href={link}
+          className="text-secondary-violet underline underline-offset-4"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View Project
+        </a>
+      )}
     </div>
   );
 }

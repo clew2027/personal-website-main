@@ -9,22 +9,30 @@ const paragraphs = [
 
 function About() {
   return (
-    <div className="bg-white-background px-32">
+    <div id="about" className="bg-white-background px-32">
       <div className="w-full h-5 border-1 border-t-0 border-grid" />
       <div className="w-full h-20 flex flex-row">
-        <div className="w-20 h-20 flex-shrink-0 border-1 border-t-0 border-grid" />
-        <div className="relative w-full flex items-center px-10 text-3xl font-medium mx-auto border-b-[1px] border-grid">
-          <div className="absolute -top-3 -left-3 w-3 h-3 border-r-1 border-b-1 border-off-black">
-            <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
-          </div>
-          <div style={{ '--shift': '250px', '--duration': '0.4s', '--delay': '0.1s' }} className="typeDisappear absolute w-full h-full bg-white-background z-10" />
-          <div id="about" className="group relative cursor-default w-fit overflow-hidden">
-            About Me
-            <div className="group-hover:left-0 bottom-[1px] duration-150 absolute w-full h-[2px] bg-off-black -left-full" />
-          </div>
-        </div>
-        <div className="w-20 h-20 flex-shrink-0 border-1 border-t-0 border-grid" />
-      </div>
+  <div className="w-20 h-20 flex-shrink-0 border-1 border-t-0 border-grid" />
+  <div className="relative w-full flex items-center px-10 mx-auto border-b-[1px] border-grid">
+    {/* corner borders */}
+    <div className="absolute -top-3 -left-3 w-3 h-3 border-r-1 border-b-1 border-off-black">
+      <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
+    </div>
+
+    {/* type animation overlay */}
+    <div
+      style={{ '--shift': '250px', '--duration': '0.4s', '--delay': '0.1s' }}
+      className="typeDisappear absolute w-full h-full bg-white-background z-10"
+    />
+
+    {/* section label */}
+    <div className="relative cursor-default w-fit overflow-hidden">
+      <p className="text-m tracking-widest text-off-black/50 ">ABOUT ME</p>
+    </div>
+  </div>
+  <div className="w-20 h-20 flex-shrink-0 border-1 border-t-0 border-grid" />
+</div>
+
       <div className="flex flex-row h-fit text-off-black">
         <div className="w-20 flex-shrink-0 border-1 border-gray-500/40 border-t-0" />
         <div className="p-10 flex xs:flex-col lg:flex-row  gap-12 border-b-1 border-grid">

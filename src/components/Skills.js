@@ -67,12 +67,12 @@ function Skills() {
     <div className="bg-white-background px-32">
       <div className="w-full h-5 border-1 border-t-0 border-grid" />
       <div className="flex xs:flex-col lg:flex-row h-fit border-l-1 border-r-1 border-grid">
-        <div className=" border-b-1 border-grid xs:w-full sm:w-full lg:w-1/2 h-fit text-center text-off-black text-3xl font-medium tracking-wide p-4">
-          <div className="text-3xl font-medium  relative w-fit mx-auto flex flex-col text-center mb-6">
+        <div className=" border-b-1 border-grid xs:w-full sm:w-full lg:w-1/2 h-fit text-center text-off-black text-m font-s tracking-wide p-4 overflow-hidden">
+          <div className="text-m tracking-widest text-off-black/50 relative w-fit mx-auto flex flex-col text-center mb-6">
             <div style={{ '--shift': '250px', '--duration': '0.4s', '--delay': '0.1s' }} className="typeDisappear absolute w-full h-full bg-white-background z-10" />
             <div id="skills" className="w-1 h-1" />
             <div className="group relative cursor-default w-fit overflow-hidden">
-              Coursework
+              COURSEWORK
               <div className="group-hover:left-0 bottom-[1px] duration-150 absolute w-full h-[2px] bg-off-black -left-full" />
             </div>
           </div>
@@ -130,93 +130,85 @@ function Skills() {
             </button>
           </div>
         </div>
-        <div className="relative xs:w-full lg:w-6/12 h-fit border-grid xs:border-l-0 lg:border-l-1 items-center text-center text-off-black text-3xl font-medium tracking-wide p-4">
-          <div className="absolute top-1/2 -left-3 w-3 h-3 border-r-1 border-b-1 border-off-black">
-            <div className="absolute w-3 h-3 border-off-black border-t-1  border-l-1 -bottom-3 -right-3" />
+        <div className="relative w-full lg:w-6/12 h-fit border-grid items-center text-center text-off-black text-m font-s tracking-wide p-4">
+  {/* Decorative corners */}
+  <div className="absolute top-1/2 -left-3 w-3 h-3 border-r-1 border-b-1 border-off-black">
+    <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
+  </div>
+
+  {/* Title */}
+  <div className="relative w-fit mx-auto text-center mb-8 text-m tracking-widest text-off-black/50">
+    <div id="skills" className="w-1 h-1" />
+    <div className="group relative cursor-default w-fit overflow-hidden">
+      SKILLS
+      <div className="group-hover:left-0 bottom-[1px] duration-150 absolute w-full h-[2px] bg-off-black -left-full" />
+    </div>
+  </div>
+
+  {/* Grid of skill cards */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+    {/* Skill Card */}
+    {[
+      {
+        title: 'Software Development',
+        items: ['Java', 'Python', 'Swift', 'C#', 'OCaml'],
+      },
+      {
+        title: 'Data Science',
+        items: ['Python', 'Pandas', 'PySpark', 'MATLAB', 'Data Wrangling & Cleaning'],
+      },
+      {
+        title: 'Design (UI/UX & more)',
+        items: ['Figma', 'FigJam', 'Rhino', 'Grasshopper', 'UX Research'],
+      },
+      {
+        title: 'Web Development',
+        subsections: [
+          {
+            title: 'Frontend',
+            items: ['JavaScript / TypeScript', 'React', 'Angular', 'CSS / Tailwind', 'Vue.js'],
+          },
+          {
+            title: 'Backend',
+            items: ['NodeJS', 'MongoDB', 'MySQL', 'DynamoDB', 'ExpressJS'],
+          },
+        ],
+      },
+    ].map((section, idx) => (
+      <div
+        key={idx}
+        className="bg-white-background border-1 border-grid border-b-[#617891] border-b-8 rounded-md p-4 hover:shadow-[0_2px_6px_rgba(0,0,0,0.05)] transition-all duration-300"
+      >
+        <div className="text-off-black text-m tracking-widest font-s mb-3">{section.title}</div>
+        {/* If subsection (like Frontend/Backend) */}
+        {section.subsections ? (
+          <div className="grid grid-cols-2 gap-4 text-off-black/90 text-sm">
+            {section.subsections.map((sub, i) => (
+              <div key={i}>
+                <div className="font-s text-off-black/80 mb-1">{sub.title}</div>
+                <ul className="text-off-black/70 text-xs space-y-1">
+                  {sub.items.map((item, j) => (
+                    <li key={`${sub.title}-${j}`} className="truncate">
+                      ▸ {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <div className="relative w-fit mx-auto text-center mb-4 text-3xl font-medium ">
-            <div style={{ '--shift': '150px', '--duration': '0.4s', '--delay': '0.3s' }} className="typeDisappear absolute w-full h-full bg-white-background z-10" />
-            <div className="group relative cursor-default w-fit overflow-hidden">
-              Skills
-              <div className="group-hover:left-0 bottom-[1px] duration-150 absolute w-full h-[2px] bg-off-black -left-full" />
-            </div>
-          </div>
-          <div className="flex flex-col gap-8">
-            <div className="w-full cursor-default flex flex-row justify-center">
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
-          
-                <div className="duration-300 my-2 text-off-black text-xl">Software Development</div>
-                <div className="text-off-black/70 text-lg">
-                  <ul className="text-off-black/70">
-                    <li className="list-element tracking-wide font-normal text-sm"> Java</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> Python</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> Swift</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> C#</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> OCaml</li>
-                  </ul>
-                </div>
-              </div>
+        ) : (
+          <ul className="text-off-black/70 text-xs space-y-1">
+            {section.items.map((item, j) => (
+              <li key={`${section.title}-${j}`}>▸ {item}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
 
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
-                <div className="duration-300 my-2 text-off-black text-xl">Data Science</div>
-                <div className="text-off-black/70 text-lg">
-                  <ul className="text-off-black/70">
-                    <li className="list-element tracking-wide font-normal text-sm"> Python</li>
-                    <li className="ml-4 list-element tracking-wide font-normal text-xs"> Pandas</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> PySpark</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> MATLAB</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> Data Wrangling & Cleaning</li>
-                  </ul>
-                </div>
-              </div>
-              <div />
-            </div>
-
-
-            <div className="w-full cursor-default flex flex-row justify-center">
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit w-1/2 group mr-2 duration-300 card text-left border-b-[#617891] border-b-8">
-          
-                <div className="duration-300 my-2 text-off-black text-xl">Design (UI/UX & more)</div>
-                <div className="text-off-black/70 text-lg">
-                  <ul className="text-off-black/70">
-                    <li className="list-element tracking-wide font-normal text-sm"> Figma</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> FigJam</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> Rhino</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> Grasshopper</li>
-                    <li className="list-element tracking-wide font-normal text-sm"> UX Research</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-white-background border-1 border-r-grid border-t-grid border-l-grid h-fit xs:w-full sm:w-3/4 md:w-1/2 lg:w-3/4 xl:w-1/2 group m-auto duration-300 card text-left border-b-[#617891] border-b-8">
-              <div className="duration-300 mt-5 mb-2 text-off-black text-xl">Web Development</div>
-              <div className="text-off-black/90 text-lg grid grid-cols-2 gap-4">
-                <div>
-                  Frontend
-                  <ul className="text-off-black/70">
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> JavaScript / TypeScript</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> React</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> Angular</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> CSS / Tailwind CSS</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> Vue.js</li>
-                  </ul>
-                </div>
-                <div>
-                  Backend
-                  <ul className="text-off-black/70">
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> NodeJS</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> MongoDB</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> MySQL</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> DynamoDB</li>
-                    <li className="truncate list-element tracking-wide font-normal text-sm"> ExpressJS</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-              <div />
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );

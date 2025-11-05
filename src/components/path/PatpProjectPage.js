@@ -191,15 +191,14 @@ export default function PatpProjectPage() {
                     </tbody>
                   </table>
                 </div>
-              </div>
+              </div> 
             </div>
-            <p className="text-xl leading-relaxed max-w-3xl mb-1">
-              Mapping friction across the course planning flow
-            </p>
-            <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug">
-              Students often lose confidence when building schedules, as details and actions are scattered across multiple surfaces. To locate the biggest pain points, I mapped the user journey and synthesized interview data with an affinity map to uncover recurring themes and opportunities.
-            </p>
-
+          </div>
+          <p className="text-xl leading-relaxed max-w-3xl mb-1 mt-10">
+              Mapping friction across the course planning flow</p>
+            <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug mb-8">
+              Students often lose confidence when building schedules, as details and actions are scattered across multiple surfaces. To locate the biggest pain points, I mapped the user journey and synthesized interview data with an affinity map to uncover recurring themes and opportunities.</p>
+            
             {/* Journey Map (image card) */}
             <div className="mb-8">
               <div className="relative border-1 border-grid rounded-lg overflow-hidden w-full max-w-7xl">
@@ -223,7 +222,6 @@ export default function PatpProjectPage() {
               </div>
               <div className="text-sm text-off-black/60 mt-2">Figure: Affinity map of themes and opportunities.</div>
             </div>
-          </div>
         </div>
       </div>
 

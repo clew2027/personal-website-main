@@ -439,6 +439,7 @@
 @layer base {
   html {
     font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
 }
 

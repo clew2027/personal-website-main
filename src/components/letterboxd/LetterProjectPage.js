@@ -9,6 +9,8 @@ import UserFlows from "./Flows.js";
 import PathSol from "./pathsol.js";
 import Results from "./Results.js";
 import WhatILearned from "./WhatILearned.js";
+import Problem from "./LPD.js";
+import LetterSol from "./LetterSol.js";
 
 const path = new URL('../images/letterimages/lcover.png', import.meta.url).href;
 
@@ -47,7 +49,7 @@ export default function LetterProjectPage() {
                 PERSONAL PROJECT · WINTER 2025
               </div>
               <h2 className="text-3xl leading-snug font-medium">
-              Extensively exploring user flows and designing for simplicity, engagement, and efficiency.
+              Exploring user flows & designing for efficiency and engagement.
               </h2>
             </div>
 
@@ -99,11 +101,12 @@ export default function LetterProjectPage() {
             <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
             </div>
 
-            <h2 className="text-2xl font-medium mb-4">Introduction</h2>
-            <p className="text-base leading-relaxed max-w-3xl">
-            Letterboxd is a social platform for film lovers, allowing users to track, review, and discuss movies they've watched. Users can create personalized movie lists, write reviews, rate films, and follow other members to see their movie activity and recommendations. </p>
-            <p className="text-base leading-relaxed max-w-3xl mt-4">
-            I occasionally use Letterboxd, but for this redesign, I took a deeper dive by mapping out the app’s user flow in detail. Here's what I discovered:
+            <p className="text-xs tracking-widest text-off-black/50 mb-2">INTRODUCTION</p>
+            <p className="text-xl leading-relaxed max-w-3xl">
+              Social platform for film lovers
+            </p>
+            <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug">
+              Users track, review, and discuss movies they've watched.  Users can create personalized movie lists, write reviews, rate films, and follow other members to see their movie activity and recommendations.
             </p>
         </div>
         </div>
@@ -118,95 +121,87 @@ export default function LetterProjectPage() {
       <div className="absolute w-3 h-3 border-off-black border-t-1 border-l-1 -bottom-3 -right-3" />
     </div>
 
-    <h2 className="text-2xl font-medium mb-4">The User Journey</h2>
-    <p className="text-base leading-relaxed max-w-3xl mb-10">
-      I mapped out all major flows of the app, and interviewed 7 people to understand their interactions, friction points, and to confusions. 
+    <p className="text-xs tracking-widest text-off-black/50 mb-2">USER RESEARCH</p>
+    <p className="text-xl leading-relaxed max-w-3xl">Understanding the User Journey and Roadblocks</p>
+    <p className="text-[.95rem] leading-relaxed text-off-black/70 max-w-3xl leading-snug mb-8">
+      I interviewed users and mapped out their journeys to learn how they discover/log films and interact with friends
     </p>
 
-    {/* Grid: two tables on top, photo on bottom */}
-        <div className="grid gap-10 items-start">
-        {/* TOP ROW: two tables side by side */}
-        <div className="grid lg:grid-cols-2 gap-10">
-            {/* LEFT: Questions Table */}
-            <div className="h-fit border-1 border-grid">
-            <div className="w-full h-5 border-b-1 border-grid" />
-            <div className="relative text-xl h-14 w-full flex items-center px-6 font-medium border-b-1 border-grid text-off-black">
-                Questions I Asked
-            </div>
-            <div className="p-6 text-off-black">
-                <table className="w-full border-collapse">
-                <tbody>
-                    <tr className="border-b-1 border-grid">
-                    <td className="p-3">
-                    Walk me through how you’d log and review a film on Letterboxd.
-                    </td>
-                    </tr>
-                    <tr className="border-b-1 border-grid">
-                    <td className="p-3">
-                    Show me how you would use your profile or watchlist to track what you’ve seen and what you want to watch.
-                    </td>
-                    </tr>
-                    <tr className="border-b-1 border-grid">
-                    <td className="p-3">
-                    When deciding what movie to watch, which information are you comparing, and how do you decide?
-                    </td>
-                    </tr>
-                    <tr>
-                    <td className="p-3">
-                        If you could change one thing about this design, what would it be?
-                    </td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            </div>
+    <div className="grid gap-10 items-start">
+            {/* TOP ROW: two tables side by side */}
+            <div className="grid lg:grid-cols-2 gap-20">
+              {/* LEFT: Questions Table */}
+              <div className="h-fit border-1 border-grid">
+                <div className="relative text-lg leading-relaxed h-14 w-full flex items-center px-6 font-medium border-b border-grid text-off-black max-w-3xl">
+                  Questions I Asked
+                </div>
+                <div className="p-3 text-off-black/70">
+                  <table className="w-full border-collapse">
+                    <tbody>
+                      <tr className="border-b-1 border-grid">
+                        <td className="p-3">
+                        Walk me through how you’d log and review a film on Letterboxd.
+                        </td>
+                      </tr>
+                      <tr className="border-b-1 border-grid">
+                        <td className="p-3">
+                        Show me how you would use your profile or watchlist to track what you’ve seen and what you want to watch.
+                        </td>
+                      </tr>
+                      <tr className="border-b-1 border-grid">
+                        <td className="p-3">
+                        When deciding what movie to watch, which information are you comparing, and how do you decide?
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-3">
+                          If you could change one thing about this design, what would it be?
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
 
-            {/* RIGHT: Participants Table */}
-            <div className="h-fit border-1 border-grid">
-            <div className="w-full h-5 border-b-1 border-grid" />
-            <div className="relative text-xl h-14 w-full flex items-center px-6 font-medium border-b-1 border-grid text-off-black">
-                People I Interviewed
-            </div>
-            <div className="p-6 text-off-black">
-                <table className="w-full border-collapse">
-                <tbody>
-                    <tr className="border-b-1 border-grid">
-                    <td className="p-3">Avid Users - log every movie, write reviews, and follow friends.  </td>
-                    </tr>
-                    <tr className="border-b-1 border-grid">
-                    <td className="p-3">
+              {/* RIGHT: Participants Table */}
+              <div className="h-fit border-1 border-grid">
+                <div className="relative text-lg leading-relaxed h-14 w-full flex items-center px-6 font-medium border-b border-grid text-off-black max-w-3xl">
+                  People I Interviewed
+                </div>
+                <div className="p-3 text-off-black/70">
+                  <table className="w-full border-collapse">
+                    <tbody>
+                      <tr className="border-b-1 border-grid">
+                        <td className="p-3">Avid Users - log every movie, write reviews, and follow friends.
+                        </td>
+                      </tr>
+                      <tr className="border-b-1 border-grid">
+                        <td className="p-3">
+                          Students from all 4 schools: College of Arts & Sciences, Engineering, Nursing, and Wharton
+                        </td>
+                      </tr>
+                      <tr className="border-b-1 border-grid">
+                        <td className="p-3">
                         Casual users - occasionally save films.
-                    </td>
-                    </tr>
-                    <tr className="border-b-1 border-grid">
-                    <td className="p-3">
+                        </td>
+                      </tr>
+                      <tr className="border-b-1 border-grid">
+                        <td className="p-3">
                         Retirees - used to use the app often but now don't
-                    </td>
-                    </tr>
-                </tbody>
-                </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div> 
             </div>
-            </div>
+          </div>
+    
+
         </div>
-
-        <div className="p-6 space-y-6 text-off-black">
-    <blockquote className="italic border-l-2 border-off-black/30 pl-4">
-    "I don’t understand the difference between a watchlist and a list."
-    </blockquote>
-
-    <blockquote className="italic border-l-2 border-off-black/30 pl-4">
-    "There’s so much information crammed onto each page that I’m constantly scrolling, and it makes the experience feel overwhelming instead of enjoyable."
-    </blockquote>
-
-    <blockquote className="italic border-l-2 border-off-black/30 pl-4">
-      "Some buttons, like adding a movie or review, aren’t placed in convenient places, and I'm always looking for them."
-    </blockquote>
-  </div>
-    </div>
-
-  </div>
 </div>
-
+<Problem/>
+{/* 
 <UserFlows
   auth={{
     img: authFlowImg, // replace with your image var
@@ -267,8 +262,9 @@ export default function LetterProjectPage() {
       "'Add' action only supports reviews (not lists); adding to a list requires opening the film page and using the overflow menu."
     ]
   }}
-/>
+/> */}
 
+    <LetterSol/>
     <PathSol/>
 
 <Results
