@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import GithubIcon from './GithubIcon';
+import { Link } from 'react-router-dom';
 
 function PortfolioCard({
   index, title, description, technologies, link, type
 }) {
+
   return (
     <div
       className={`
@@ -11,6 +14,7 @@ function PortfolioCard({
         hover:scale-100 duration-200 overflow-hidden relative w-full h-full rounded-md
         ${index === 1 || index === 2 ? 'lg:border-l-1' : ''}
       `}
+      onClick={handleNavigation}
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
         <div className="text-off-black font-medium text-lg">↳ {title}</div>
@@ -33,14 +37,23 @@ function PortfolioCard({
         ))}
       </div>
       {link && (
-        <a
-          href={link}
-          className="text-secondary-violet underline underline-offset-4"
-          target="_blank"
-          rel="noreferrer"
-        >
-          View Project
-        </a>
+        link.startsWith('http') ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm underline underline-offset-4 hover:text-[#9aa9ff]"
+          >
+            View Project
+          </a>
+        ) : (
+          <Link
+            to={link}
+            className="text-sm underline underline-offset-4 hover:text-[#9aa9ff]"
+          >
+            View Project
+          </Link>
+        )
       )}
     </div>
   );

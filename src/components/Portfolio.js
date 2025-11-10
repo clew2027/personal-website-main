@@ -17,7 +17,7 @@ const featuredProjects = [
       'An intuitive redesign that simplifies the course search and registration for Penn students.',
     ],
     technologies: [],
-    github: '/projects/patp',
+    github: './projects/patp',
     type: 'SPRING 2025 / PRODUCT DESIGN'
   },
   {
@@ -28,7 +28,7 @@ const featuredProjects = [
       'Simplifying user flows and boosting engagement with friend-based features.',
     ],
     technologies: [],
-    github: '/projects/letterboxd',
+    github: './projects/letterboxd',
     type: 'SPRING 2025 / PRODUCT DESIGN'
   },
   {
@@ -151,8 +151,6 @@ function Portfolio() {
                 <a
                   key={`project-${project.title}-${idx}`}
                   href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
                   className="project-card group relative flex flex-col overflow-hidden hover:opacity-90 transition-all duration-300"
                 >
                   {project.image_src && (
