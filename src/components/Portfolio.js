@@ -17,7 +17,7 @@ const featuredProjects = [
       'An intuitive redesign that simplifies the course search and registration for Penn students.',
     ],
     technologies: [],
-    github: './projects/patp',
+    github: './src/components/path/PatpProjectPage',
     type: 'SPRING 2025 / PRODUCT DESIGN'
   },
   {
@@ -28,7 +28,7 @@ const featuredProjects = [
       'Simplifying user flows and boosting engagement with friend-based features.',
     ],
     technologies: [],
-    github: './projects/letterboxd',
+    github: './src/components/path/LetterProjectPage',
     type: 'SPRING 2025 / PRODUCT DESIGN'
   },
   {
