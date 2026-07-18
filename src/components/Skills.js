@@ -51,6 +51,24 @@ const semesters = [
       { code: 'CIS 5190', name: 'Applied Machine Learning' },
       { code: 'DSGN 1020', name: 'Art of the Web' },
     ],
+  },
+  {
+    semester: 'Spring 2026',
+    courses: [
+      { code: 'CIS 5500', name: 'Database and Information Systems' },
+      { code: 'CIS 5800', name: 'Machine Perception' },
+      { code: 'MEAM 5100', name: 'Mechatronics' },
+      { code: 'DSGN 1070', name: 'Graphic Design' },
+    ],
+  },
+  {
+    semester: 'Fall 2026',
+    courses: [
+      { code: 'MEAM 5200', name: 'Introduction to Robotics' },
+      { code: 'ARTH 1040', name: 'Introduction to Computer Systems' },
+      { code: 'CIS 5810', name: 'Computer Vision & Computational Photography' },
+      { code: 'DSGN 0010', name: 'Art, Design and Digital Culture' },
+    ],
   }
 ];
 const outerLeftStyle = 'w-full h-[80%] top-[10%] sm:-translate-x-[30%] md:-translate-x-[60%] lg:-translate-x-[30%] xl:-translate-x-[55%]  z-0 blur-[2px]';

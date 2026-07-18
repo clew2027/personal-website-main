@@ -10,7 +10,6 @@ import PathSol from "./pathsol.js";
 import Results from "./Results.js";
 import WhatILearned from "./WhatILearned.js";
 import Problem from "./LPD.js";
-import LetterSol from "./LetterSol.js";
 
 const path = new URL('../images/letterimages/lcover.png', import.meta.url).href;
 
@@ -264,8 +263,8 @@ export default function LetterProjectPage() {
   }}
 /> */}
 
-    <LetterSol/>
-    <PathSol/>
+<PathSol/>
+
 
 <Results
   metrics={[

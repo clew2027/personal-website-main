@@ -72,7 +72,7 @@ function Home() {
               style={{ '--delay': '1.4s', '--slideDuration': '0.2s' }}
               className="text-off-black/80 slideAnimation tracking-wide max-w-md"
             >
-              I&apos;m a junior @ Penn who loves using design and software to build thoughtful and accessible tech!
+              I&apos;m a senior @ Penn who loves challenging engineering problems and building fun products.
             </div>
           </div>
   

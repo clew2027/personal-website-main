@@ -2,9 +2,9 @@ import React from 'react';
 const glee = new URL('./images/gleebackstage.jpg', import.meta.url).href;
 
 const paragraphs = [
-  "👧 Hi, I'm Charlotte! I'm currently a junior studying CIS and Design + Robotics Masters @ Penn. Currently, I'm a Frontend Engineer + Product Design intern at Wayhome",
-  "💻 I'm especially interested in mobile programming, fullstack web dev, data-driven systems, and accessible and thoughtful UI/UX. I'm passionate about solving problems through ",
-  "🎵 Outside of school and work, you'll catch me touring with the Penn Glee Club, playing piano @ Fisher Bennet Hall or picking up a pup cup for my dog at Starbucks!",
+  "👧 Hi, I'm Charlotte! I'm currently an upcoming senior studying CIS and Design + Robotics Masters @ Penn. Currently, I'm a Software Engineer intern at Verkada in San Mateo",
+  "💻 I'm especially interested in fullstack web dev, robotics, and any challenging engineering problem.",
+  "🎵 Outside of school and work, you'll catch me touring with the Penn Glee Club, playing piano @ Fisher Bennet Hall or walking around with my yorkshire terrier",
 ];
 
 function About() {
@@ -52,7 +52,7 @@ function About() {
             <img loading="lazy" alt="headshot" width="400"
             height="400" src={glee} />
             <p className="mt-2 text-sm text-off-black/80">
-                me backstage at Penn Glee Club&apos;s 2025 spring show!
+                me backstage at Penn Glee Club&apos;s spring show!
             </p>
             <div className="group-hover:top-[calc(100%-80px+20px)] duration-300 ease-in-out absolute -top-5 -right-5 w-20 h-20 border-r-[1px] border-r-black" />
             <div className="group-hover:right-[calc(100%-80px+20px)] duration-300 ease-in-out absolute -top-5 -right-5 w-20 h-20 border-t-[1px] border-t-black" />

@@ -7,8 +7,29 @@ const nokaicover = new URL('./images/nokaicover.jpg', import.meta.url).href;
 const letter = new URL('./images/letter.png', import.meta.url).href;
 const patp = new URL('./images/pathimages/patp.png', import.meta.url).href;
 const pennstagram = new URL('./images/pennstagram.png', import.meta.url).href;
+const verkada = new URL('./images/icons/verkadabullet.webp', import.meta.url).href;
+const robocar = new URL('./images/robocar.png', import.meta.url).href;
 
 const featuredProjects = [
+  {
+    image_alt: 'Verkada bullet camera',
+    image_src: verkada,
+    title: 'SWE @ Verkada',
+    description: [
+      'Building firmware, backend APIs, and frontend interfaces for configurable alerts and live notifications for a new camera product.',
+    ],
+    technologies: ['TypeScript', 'React', 'Python', 'Go'],
+    type: 'SUMMER 2026 / INTERNSHIP'
+  },{
+    image_alt: 'Mechatronics Robot',
+    image_src: robocar,
+    title: 'Mechatronics Autonomous Robo-Car',
+    description: [
+      'An autonomous mobile robot that uses encoder feedback, Vive localization, dead reckoning, and Time-of-Flight sensors to navigate an obstacle course',
+    ],
+    technologies: ['C++', 'Soldering'],
+    type: 'SPRING 2026 / ROBOTICS'
+  },
   {
     image_alt: 'Path@Penn Redesign',
     image_src: patp,
@@ -142,7 +163,7 @@ function Portfolio() {
         <div className="w-20 flex-shrink-0 border-1 border-gray-500/40 border-t-0" />
         <div className="flex flex-col flex-1 border-b-1 border-grid">
           <div className="p-4">
-          <p className="text-m tracking-widest text-off-black/50 mb-2 ml-4">PROJECTS</p>
+          <p className="text-m tracking-widest text-off-black/50 mb-2 ml-4">EXPERIENCE + PROJECTS</p>
             <div
               id="project-cards"
               className="relative grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-10 w-full h-fit px-4 pb-6 mx-auto text-off-black"

@@ -12,7 +12,7 @@ function Overlay() {
           href="#portfolio"
           className="text-sm tracking-widest text-off-black/50 mb-2 cursor-pointer no-underline transition-colors duration-200 hover:text-off-black"
         >
-          PROJECTS
+          EXPERIENCE
         </a>
         <a
           href="#about"
